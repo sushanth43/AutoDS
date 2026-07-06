@@ -1,0 +1,8 @@
+In Git conventions:
+
+feat → New feature
+fix → Bug fix
+docs → Documentation
+refactor → Improve existing code
+test → Tests
+chore → Project setup, configuration, maintenance

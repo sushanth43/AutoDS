@@ -31,3 +31,99 @@
 2026-07-14 09:22:15 | INFO     | Environment       : development
 2026-07-14 09:22:15 | INFO     | Debug Mode        : True
 2026-07-14 09:22:15 | ERROR    | Dataset 'train.csv' not found.
+2026-07-14 10:46:09 | INFO     | Project Started
+2026-07-14 10:46:09 | INFO     | Project Name      : AutoDS
+2026-07-14 10:46:09 | INFO     | Project Version   : 1.0.0
+2026-07-14 10:46:09 | INFO     | Test Size         : 0.2
+2026-07-14 10:46:09 | INFO     | Random State      : 42
+2026-07-14 10:46:09 | INFO     | Supported Files   : ['csv']
+2026-07-14 10:46:09 | INFO     | Environment       : development
+2026-07-14 10:46:09 | INFO     | Debug Mode        : True
+2026-07-14 10:46:09 | ERROR    | Dataset 'train.csv' not found.
+2026-07-14 10:46:17 | ERROR    | Dataset not found: data\sample.csv
+2026-07-14 10:47:49 | INFO     | Project Started
+2026-07-14 10:47:49 | INFO     | Project Name      : AutoDS
+2026-07-14 10:47:49 | INFO     | Project Version   : 1.0.0
+2026-07-14 10:47:49 | INFO     | Test Size         : 0.2
+2026-07-14 10:47:49 | INFO     | Random State      : 42
+2026-07-14 10:47:49 | INFO     | Supported Files   : ['csv']
+2026-07-14 10:47:49 | INFO     | Environment       : development
+2026-07-14 10:47:49 | INFO     | Debug Mode        : True
+2026-07-14 10:47:49 | ERROR    | Dataset 'train.csv' not found.
+2026-07-14 10:47:50 | ERROR    | Dataset not found: data\sample.csv
+2026-07-14 10:47:50 | ERROR    | Dataset 'data\sample.csv' does not exist.
+2026-07-14 10:51:03 | INFO     | Project Started
+2026-07-14 10:51:03 | INFO     | Project Name      : AutoDS
+2026-07-14 10:51:03 | INFO     | Project Version   : 1.0.0
+2026-07-14 10:51:03 | INFO     | Test Size         : 0.2
+2026-07-14 10:51:03 | INFO     | Random State      : 42
+2026-07-14 10:51:03 | INFO     | Supported Files   : ['csv']
+2026-07-14 10:51:03 | INFO     | Environment       : development
+2026-07-14 10:51:03 | INFO     | Debug Mode        : True
+2026-07-14 10:51:03 | ERROR    | Dataset 'train.csv' not found.
+2026-07-14 10:51:04 | ERROR    | 'DataLoader' object has no attribute 'load'
+2026-07-14 10:53:24 | INFO     | Project Started
+2026-07-14 10:53:24 | INFO     | Project Name      : AutoDS
+2026-07-14 10:53:24 | INFO     | Project Version   : 1.0.0
+2026-07-14 10:53:24 | INFO     | Test Size         : 0.2
+2026-07-14 10:53:24 | INFO     | Random State      : 42
+2026-07-14 10:53:24 | INFO     | Supported Files   : ['csv']
+2026-07-14 10:53:24 | INFO     | Environment       : development
+2026-07-14 10:53:24 | INFO     | Debug Mode        : True
+2026-07-14 10:54:42 | INFO     | Project Started
+2026-07-14 10:54:42 | INFO     | Project Name      : AutoDS
+2026-07-14 10:54:42 | INFO     | Project Version   : 1.0.0
+2026-07-14 10:54:42 | INFO     | Test Size         : 0.2
+2026-07-14 10:54:42 | INFO     | Random State      : 42
+2026-07-14 10:54:42 | INFO     | Supported Files   : ['csv']
+2026-07-14 10:54:42 | INFO     | Environment       : development
+2026-07-14 10:54:42 | INFO     | Debug Mode        : True
+2026-07-14 10:54:43 | INFO     | Dataset validation successful.
+2026-07-14 10:54:43 | INFO     | Loading dataset: data\sample.csv
+2026-07-14 10:54:43 | INFO     | Dataset loaded successfully. Shape: (5, 4)
+2026-07-14 10:59:36 | INFO     | Project Started
+2026-07-14 10:59:36 | INFO     | Project Name      : AutoDS
+2026-07-14 10:59:36 | INFO     | Project Version   : 1.0.0
+2026-07-14 10:59:36 | INFO     | Test Size         : 0.2
+2026-07-14 10:59:36 | INFO     | Random State      : 42
+2026-07-14 10:59:36 | INFO     | Supported Files   : ['csv']
+2026-07-14 10:59:36 | INFO     | Environment       : development
+2026-07-14 10:59:36 | INFO     | Debug Mode        : True
+2026-07-14 10:59:38 | INFO     | Dataset validation successful.
+2026-07-14 10:59:38 | INFO     | Loading dataset: data\sample.csv
+2026-07-14 10:59:38 | INFO     | Dataset loaded successfully. Shape: (5, 4)
+2026-07-14 11:04:31 | INFO     | Project Started
+2026-07-14 11:04:31 | INFO     | Project Name      : AutoDS
+2026-07-14 11:04:31 | INFO     | Project Version   : 1.0.0
+2026-07-14 11:04:31 | INFO     | Test Size         : 0.2
+2026-07-14 11:04:31 | INFO     | Random State      : 42
+2026-07-14 11:04:31 | INFO     | Supported Files   : ['csv']
+2026-07-14 11:04:31 | INFO     | Environment       : development
+2026-07-14 11:04:31 | INFO     | Debug Mode        : True
+2026-07-14 11:04:32 | INFO     | Dataset validation successful.
+2026-07-14 11:04:32 | INFO     | Loading dataset: data\sample.csv
+2026-07-14 11:04:32 | INFO     | Dataset loaded successfully. Shape: (5, 4)
+2026-07-14 11:08:15 | INFO     | Project Started
+2026-07-14 11:08:15 | INFO     | Project Name      : AutoDS
+2026-07-14 11:08:15 | INFO     | Project Version   : 1.0.0
+2026-07-14 11:08:15 | INFO     | Test Size         : 0.2
+2026-07-14 11:08:15 | INFO     | Random State      : 42
+2026-07-14 11:08:15 | INFO     | Supported Files   : ['csv']
+2026-07-14 11:08:15 | INFO     | Environment       : development
+2026-07-14 11:08:15 | INFO     | Debug Mode        : True
+2026-07-14 11:08:15 | INFO     | Dataset validation successful.
+2026-07-14 11:08:15 | INFO     | Loading dataset: data\sample.csv
+2026-07-14 11:08:15 | INFO     | Dataset loaded successfully. Shape: (5, 4)
+2026-07-14 11:08:15 | INFO     | Generating dataset summary.
+2026-07-14 11:10:16 | INFO     | Project Started
+2026-07-14 11:10:16 | INFO     | Project Name      : AutoDS
+2026-07-14 11:10:16 | INFO     | Project Version   : 1.0.0
+2026-07-14 11:10:16 | INFO     | Test Size         : 0.2
+2026-07-14 11:10:16 | INFO     | Random State      : 42
+2026-07-14 11:10:16 | INFO     | Supported Files   : ['csv']
+2026-07-14 11:10:16 | INFO     | Environment       : development
+2026-07-14 11:10:16 | INFO     | Debug Mode        : True
+2026-07-14 11:10:16 | INFO     | Dataset validation successful.
+2026-07-14 11:10:16 | INFO     | Loading dataset: data\sample.csv
+2026-07-14 11:10:16 | INFO     | Dataset loaded successfully. Shape: (5, 4)
+2026-07-14 11:10:16 | INFO     | Generating dataset summary.

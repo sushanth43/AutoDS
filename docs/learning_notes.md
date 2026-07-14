@@ -910,3 +910,416 @@ Major components include:
 - `print()` is useful during learning but should not replace logging.
 - Logging records application events permanently.
 - Configuration should remain separate from implementation.
+
+---
+
+# Step 2.6 – Error Handling
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- What exceptions are.
+- Why applications require proper error handling.
+- The difference between built-in and custom exceptions.
+- How AutoDS implements centralized exception handling.
+
+---
+
+## Part 2.6.1 – Introduction to Error Handling
+
+### Definition
+
+Error handling is the process of detecting, managing, and responding to unexpected situations that occur while an application is running.
+
+Without proper error handling, applications terminate abruptly and provide confusing error messages.
+
+---
+
+### Why Error Handling is Important
+
+Professional software should fail gracefully.
+
+Instead of allowing Python to display a long traceback, applications should:
+
+- Detect the error
+- Log the error
+- Display a meaningful message
+- Continue execution whenever possible
+
+This improves debugging, maintainability, and user experience.
+
+---
+
+## Python Exceptions
+
+Python raises exceptions whenever an unexpected event occurs.
+
+Examples include:
+
+- FileNotFoundError
+- ValueError
+- TypeError
+- ZeroDivisionError
+
+These exceptions help identify the exact cause of a failure.
+
+---
+
+## Custom Exceptions
+
+Professional applications often define their own exceptions instead of relying entirely on Python's built-in exceptions.
+
+Example:
+
+```python
+class AutoDSError(Exception):
+    pass
+```
+
+Specific exceptions can then inherit from this base class.
+
+Example:
+
+```python
+class DatasetNotFoundError(AutoDSError):
+    pass
+```
+
+This makes error messages more meaningful and keeps the project organized.
+
+---
+
+## AutoDS Implementation
+
+AutoDS centralizes custom exceptions inside:
+
+```
+src/exceptions.py
+```
+
+The project defines:
+
+- AutoDSError
+- DatasetNotFoundError
+
+Future project-specific exceptions will inherit from `AutoDSError`.
+
+---
+
+## Benefits of Custom Exceptions
+
+- Better readability
+- Easier debugging
+- Centralized error management
+- More meaningful error messages
+- Improved maintainability
+
+---
+
+## Best Practices
+
+- Create custom exceptions for project-specific errors.
+- Inherit from a common base exception.
+- Log exceptions whenever appropriate.
+- Keep exception classes focused on a single purpose.
+
+---
+
+## Key Takeaways
+
+- Exceptions represent unexpected situations.
+- Custom exceptions improve software quality.
+- Centralized exception handling makes large projects easier to maintain.
+
+---
+
+# Step 2.7 – Utility Modules
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- What utility modules are.
+- Why helper functions should be centralized.
+- Why AutoDS includes a utility module.
+
+---
+
+## What is a Utility Module?
+
+A utility module stores reusable helper functions that may be required by multiple parts of an application.
+
+Instead of duplicating code across several files, common functionality is implemented once and reused.
+
+---
+
+## AutoDS Utility Module
+
+AutoDS contains:
+
+```
+src/utils.py
+```
+
+Initially, the file contains only a module docstring.
+
+Helper functions will be added only when they become necessary.
+
+Examples include:
+
+- Reading JSON files
+- Saving JSON files
+- Creating directories
+- Loading models
+- Saving models
+- Reading configuration files
+
+---
+
+## Why Create It Now?
+
+Creating the utility module early establishes a dedicated location for reusable helper functions.
+
+As the project grows, new utilities can be added without reorganizing the project structure.
+
+---
+
+## YAGNI Principle
+
+AutoDS follows the software engineering principle:
+
+**YAGNI (You Aren't Gonna Need It).**
+
+Instead of creating helper functions in advance, utilities are implemented only when a real requirement exists.
+
+This keeps the codebase clean and avoids unnecessary complexity.
+
+---
+
+## Best Practices
+
+- Keep utility functions generic.
+- Avoid placing business logic inside utility modules.
+- Reuse utilities instead of duplicating code.
+- Create utilities only when required.
+
+---
+
+## Key Takeaways
+
+- Utility modules reduce code duplication.
+- They improve maintainability.
+- Following YAGNI prevents unnecessary development.
+
+---
+
+# Phase 3 – Data Ingestion
+
+### Status
+
+✅ Completed
+
+---
+
+# Phase Objectives
+
+The objective of this phase was to build the first functional module of AutoDS capable of loading datasets into the application.
+
+By the end of this phase, AutoDS can:
+
+- Load CSV datasets.
+- Validate file existence.
+- Validate supported file types.
+- Read datasets into Pandas DataFrames.
+- Generate dataset summaries.
+- Log all major operations.
+- Raise custom exceptions when errors occur.
+
+---
+
+# Step 3.1 – Data Ingestion Overview
+
+## What is Data Ingestion?
+
+Data Ingestion is the process of collecting and importing data from external sources into an application for further processing.
+
+In Version 1 of AutoDS, the supported source is:
+
+- CSV Files
+
+Future versions may support:
+
+- Excel
+- JSON
+- SQL Databases
+- APIs
+- Cloud Storage
+
+---
+
+# Step 3.2 – Installing Pandas
+
+## Why Pandas?
+
+Pandas is the most widely used Python library for working with structured datasets.
+
+It provides:
+
+- DataFrame
+- Data Cleaning
+- Data Filtering
+- Data Aggregation
+- Statistical Analysis
+
+Installation:
+
+```bash
+pip install pandas
+```
+
+---
+
+# Step 3.3 – DataLoader Class
+
+## Why create a DataLoader?
+
+Instead of reading datasets directly throughout the project using:
+
+```python
+pd.read_csv(...)
+```
+
+AutoDS centralizes dataset loading inside a dedicated class.
+
+Advantages:
+
+- Reusable
+- Easier to maintain
+- Easier to test
+- Centralized validation
+- Cleaner architecture
+
+---
+
+# Step 3.4 – File Validation
+
+Before loading any dataset, AutoDS validates:
+
+- File existence
+- Supported file extension
+
+If validation fails:
+
+- Logs the error
+- Raises an appropriate custom exception
+
+Current supported extension:
+
+```python
+SUPPORTED_FILE_TYPES = ["csv"]
+```
+
+---
+
+# Step 3.5 – Loading CSV Files
+
+The `load()` method performs the following sequence:
+
+1. Validate the file.
+2. Log the operation.
+3. Read the dataset using `pandas.read_csv()`.
+4. Log successful loading.
+5. Return the DataFrame.
+
+The DataFrame becomes the primary object used throughout the remainder of the project.
+
+---
+
+# Step 3.6 – Dataset Summary
+
+AutoDS generates a simple dataset summary immediately after loading.
+
+Current summary includes:
+
+- Number of rows
+- Number of columns
+- Column names
+
+This provides a quick overview of the dataset before preprocessing begins.
+
+---
+
+# Step 3.7 – Production Cleanup
+
+Two improvements were made:
+
+### Configuration Improvement
+
+The default dataset path was moved into `config.py`.
+
+```python
+DEFAULT_DATASET_PATH = "data/sample.csv"
+```
+
+This follows the principle of separating configuration from implementation.
+
+---
+
+### Application Entry Point
+
+The project now follows the standard Python application structure.
+
+```python
+def main():
+    ...
+
+if __name__ == "__main__":
+    main()
+```
+
+This makes the project easier to maintain and aligns with professional Python development practices.
+
+---
+
+# Files Created During Phase 3
+
+```
+src/
+│
+├── data/
+│   ├── __init__.py
+│   └── data_loader.py
+```
+
+---
+
+# Best Practices Learned
+
+- Validate data before processing.
+- Separate configuration from implementation.
+- Keep data loading centralized.
+- Use logging for important operations.
+- Raise meaningful exceptions.
+- Build reusable modules instead of duplicating code.
+
+---
+
+# Key Takeaways
+
+- Data Ingestion is the first stage of every Machine Learning pipeline.
+- AutoDS now has a reusable data loading system.
+- The project architecture became more modular.
+- Future phases will build directly on the DataLoader.

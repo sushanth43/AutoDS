@@ -574,3 +574,196 @@ These are stored inside `config.py` rather than hardcoded inside `logger.py`.
 ## Future Impact
 
 As AutoDS grows, every module will use the same logging configuration without requiring additional setup.
+
+---
+
+# Engineering Decision 011
+
+## Phase
+
+Phase 2 – Configuration & Logging
+
+## Topic
+
+Centralized Error Handling
+
+## Decision
+
+Create a centralized exception module (`src/exceptions.py`) containing a common base exception (`AutoDSError`) and project-specific exceptions.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Raise generic `Exception` throughout the project.
+
+### Option B ✅ (Selected)
+
+Use custom exceptions derived from a common base class.
+
+---
+
+## Reason
+
+Custom exceptions make project-specific failures easier to identify, improve debugging, and simplify future maintenance.
+
+---
+
+## Advantages
+
+- Cleaner error handling
+- Better debugging
+- Easier maintenance
+- Reusable exception hierarchy
+
+---
+
+## Future Impact
+
+As AutoDS grows, new exceptions will inherit from `AutoDSError`, creating a consistent error handling strategy.
+
+---
+
+# Engineering Decision 012
+
+## Phase
+
+Phase 2 – Configuration & Logging
+
+## Topic
+
+Centralized Utility Module
+
+## Decision
+
+Create a dedicated utility module (`src/utils.py`) for reusable helper functions.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Duplicate helper functions across multiple modules.
+
+### Option B ✅ (Selected)
+
+Maintain a centralized utility module.
+
+---
+
+## Reason
+
+Centralizing reusable helper functions reduces duplication and improves maintainability.
+
+The module will grow only when real requirements appear, following the YAGNI principle.
+
+---
+
+## Advantages
+
+- Cleaner codebase
+- Better reusability
+- Easier maintenance
+- Reduced duplication
+
+---
+
+## Future Impact
+
+Future helper functions such as JSON handling, model persistence, and file utilities will be added to this module as needed.
+
+---
+
+# Engineering Decision 013
+
+## Phase
+
+Phase 3 – Data Ingestion
+
+## Topic
+
+Centralized Data Loading
+
+## Decision
+
+Create a dedicated `DataLoader` class responsible for dataset loading.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Call `pandas.read_csv()` directly throughout the project.
+
+### Option B ✅ (Selected)
+
+Create a reusable DataLoader module.
+
+---
+
+## Reason
+
+Centralizing data loading provides:
+
+- Better maintainability
+- Easier testing
+- Centralized validation
+- Consistent logging
+- Better scalability
+
+---
+
+## Advantages
+
+- Single responsibility
+- Reusable component
+- Cleaner project architecture
+- Easier future extensions
+
+---
+
+## Future Impact
+
+Future support for Excel, JSON, SQL databases, and APIs can be added inside the DataLoader without changing the rest of the application.
+
+---
+
+# Engineering Decision 014
+
+## Phase
+
+Phase 3 – Data Ingestion
+
+## Topic
+
+Configuration-Driven Dataset Path
+
+## Decision
+
+Move the default dataset path into `config.py`.
+
+---
+
+## Reason
+
+Dataset location is a configuration value rather than application logic.
+
+Keeping it inside `config.py` follows the project's configuration management principles.
+
+---
+
+## Advantages
+
+- Easier maintenance
+- Single source of truth
+- Cleaner implementation
+
+---
+
+## Future Impact
+
+Future versions may allow users to change dataset paths through configuration files or a graphical interface without modifying the source code.

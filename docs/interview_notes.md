@@ -607,3 +607,185 @@ A common interview question is:
 A good answer is:
 
 > "`print()` is useful for quick debugging during development, whereas logging is the standard solution for recording application events in production software."
+
+
+---
+
+# Phase 2 – Configuration & Logging
+
+# Step 2.6 – Error Handling
+
+---
+
+## Question 1
+
+**What is an exception?**
+
+### Answer
+
+An exception is an event that interrupts the normal execution of a program due to an unexpected error or condition.
+
+---
+
+## Question 2
+
+**Why do we use custom exceptions?**
+
+### Answer
+
+Custom exceptions make project-specific errors easier to understand, improve debugging, and provide meaningful error messages.
+
+---
+
+## Question 3
+
+**Why create a base exception class?**
+
+### Answer
+
+A base exception provides a common parent for all project-specific exceptions, making error handling consistent across the application.
+
+---
+
+## Question 4
+
+**What is the difference between built-in and custom exceptions?**
+
+### Answer
+
+Built-in exceptions are provided by Python.
+
+Custom exceptions are created by developers to represent application-specific errors.
+
+---
+
+## Interview Tip
+
+Interviewers often ask:
+
+> "Why not just use Exception everywhere?"
+
+A good answer is:
+
+> "Custom exceptions improve readability, debugging, maintainability, and make project-specific failures easier to identify."
+
+---
+
+# Step 2.7 – Utility Modules
+
+---
+
+## Question 1
+
+**What is a utility module?**
+
+### Answer
+
+A utility module contains reusable helper functions that can be shared across multiple parts of an application.
+
+---
+
+## Question 2
+
+**Why shouldn't business logic be placed inside utility modules?**
+
+### Answer
+
+Business logic belongs in feature-specific modules.
+
+Utility modules should contain only generic helper functions that are reusable throughout the application.
+
+---
+
+## Question 3
+
+**What is the YAGNI principle?**
+
+### Answer
+
+YAGNI stands for "You Aren't Gonna Need It."
+
+It encourages developers to implement functionality only when it is actually required rather than anticipating future needs.
+
+---
+
+## Interview Tip
+
+Using the YAGNI principle demonstrates an understanding of clean software design and helps avoid unnecessary complexity.
+
+---
+
+# Phase 3 – Data Ingestion
+
+---
+
+## Question 1
+
+**What is Data Ingestion?**
+
+### Answer
+
+Data Ingestion is the process of importing data from external sources into an application for further processing.
+
+---
+
+## Question 2
+
+**Why create a DataLoader class instead of directly using `pd.read_csv()`?**
+
+### Answer
+
+Using a DataLoader centralizes data loading, validation, logging, and error handling, making the application easier to maintain and extend.
+
+---
+
+## Question 3
+
+**Why should datasets be validated before loading?**
+
+### Answer
+
+Validation ensures that:
+
+- The file exists.
+- The file type is supported.
+
+This prevents unnecessary runtime errors.
+
+---
+
+## Question 4
+
+**Why return a Pandas DataFrame?**
+
+### Answer
+
+The DataFrame is Pandas' primary data structure and provides powerful functionality for data manipulation, cleaning, visualization, and machine learning.
+
+---
+
+## Question 5
+
+**What responsibilities should a DataLoader have?**
+
+### Answer
+
+A DataLoader should:
+
+- Validate input files.
+- Read datasets.
+- Handle errors.
+- Log operations.
+- Return structured data.
+
+---
+
+## Interview Tip
+
+A common interview discussion is:
+
+> "Why design a DataLoader class when Pandas already provides `read_csv()`?"
+
+A strong answer is:
+
+> "Because the DataLoader encapsulates validation, logging, configuration, and error handling, keeping the rest of the application independent of file-loading details."

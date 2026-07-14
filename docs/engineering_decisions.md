@@ -510,3 +510,67 @@ Separating secrets from source code improves security, prevents accidental expos
 ## Future Impact
 
 Future integrations such as OpenAI, databases, email services, and cloud deployments will use Environment Variables instead of hardcoded credentials.
+
+
+---
+
+# Engineering Decision 010
+
+## Phase
+
+Phase 2 – Configuration & Logging
+
+## Topic
+
+Centralized Logging System
+
+## Decision
+
+Implement a centralized logging system using Python's built-in `logging` module.
+
+The logger is configured once inside `src/logger.py` and reused throughout the project.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Use `print()` statements throughout the project.
+
+### Option B ✅ (Selected)
+
+Use a centralized logging system.
+
+---
+
+## Reason
+
+A centralized logging system provides timestamps, severity levels, persistent log files, and consistent formatting across the application.
+
+---
+
+## Advantages
+
+- Easier debugging
+- Better monitoring
+- Professional software practice
+- Reusable across modules
+- Consistent log formatting
+
+---
+
+## Additional Decision
+
+The following logging settings are treated as configuration values:
+
+- LOG_FILE_NAME
+- LOG_LEVEL
+
+These are stored inside `config.py` rather than hardcoded inside `logger.py`.
+
+---
+
+## Future Impact
+
+As AutoDS grows, every module will use the same logging configuration without requiring additional setup.

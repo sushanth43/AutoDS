@@ -754,3 +754,159 @@ DEBUG = os.getenv("DEBUG")
 - `.env` files simplify local development.
 - `python-dotenv` loads Environment Variables into Python.
 - Configuration and Environment Variables serve different purposes.
+
+
+---
+
+# Step 2.5 – Logging System
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- What logging is.
+- Why logging is preferred over `print()` in professional applications.
+- The different logging levels.
+- How to configure Python's logging module.
+- How AutoDS implements logging.
+
+---
+
+## Part 2.5.1 – Introduction to Logging
+
+### Definition
+
+Logging is the process of recording important events that occur while an application is running.
+
+Instead of displaying information only on the terminal, logging stores these events in log files, making debugging and monitoring much easier.
+
+---
+
+### Why Logging is Important
+
+As software grows, applications become too large to debug using `print()` statements alone.
+
+Logging provides:
+
+- Timestamps
+- Severity levels
+- Permanent records
+- Easier debugging
+- Production monitoring
+
+---
+
+## Logging vs Print
+
+| Print | Logging |
+|--------|---------|
+| Displays messages on the terminal | Displays messages and stores them in log files |
+| Temporary debugging | Long-term monitoring |
+| No timestamps | Includes timestamps |
+| No severity levels | Supports multiple log levels |
+| Not suitable for production | Standard practice in production |
+
+---
+
+## Logging Levels
+
+Python provides several logging levels.
+
+### DEBUG
+
+Detailed information used while debugging.
+
+### INFO
+
+Normal application events.
+
+Example:
+
+- Dataset loaded
+- Model training started
+
+### WARNING
+
+Something unexpected happened, but the application can continue.
+
+### ERROR
+
+An operation failed.
+
+Example:
+
+- Unable to read a CSV file.
+
+### CRITICAL
+
+A serious failure that may stop the application.
+
+---
+
+## AutoDS Logging Architecture
+
+AutoDS centralizes logging inside:
+
+```
+src/logger.py
+```
+
+The logger is configured once and reused throughout the application.
+
+Logs are stored inside:
+
+```
+logs/
+    autods.log
+```
+
+---
+
+## Configuration
+
+The logging system uses:
+
+- `LOG_FILE_NAME`
+- `LOG_LEVEL`
+
+These values are stored inside `config.py` instead of being hardcoded.
+
+This follows the principle of separating configuration from implementation.
+
+---
+
+## Implementation
+
+The logging system uses Python's built-in `logging` module.
+
+Major components include:
+
+- `logging.basicConfig()`
+- `FileHandler`
+- `StreamHandler`
+- `logger.info()`
+
+---
+
+## Best Practices
+
+- Configure logging only once.
+- Reuse the same logger across the project.
+- Keep log configuration centralized.
+- Store log configuration inside `config.py`.
+- Use meaningful log messages.
+
+---
+
+## Key Takeaways
+
+- Logging is essential for professional software.
+- `print()` is useful during learning but should not replace logging.
+- Logging records application events permanently.
+- Configuration should remain separate from implementation.

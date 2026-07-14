@@ -1,0 +1,24 @@
+2026-07-14 09:06:25,915 | INFO | Project Started
+2026-07-14 09:06:25,915 | INFO | Project Name      : AutoDS
+2026-07-14 09:06:25,915 | INFO | Project Version   : 1.0.0
+2026-07-14 09:06:25,915 | INFO | Test Size         : 0.2
+2026-07-14 09:06:25,915 | INFO | Random State      : 42
+2026-07-14 09:06:25,915 | INFO | Supported Files   : ['csv']
+2026-07-14 09:06:25,915 | INFO | Environment       : development
+2026-07-14 09:06:25,915 | INFO | Debug Mode        : True
+2026-07-14 09:08:06 | INFO     | Project Started
+2026-07-14 09:08:06 | INFO     | Project Name      : AutoDS
+2026-07-14 09:08:06 | INFO     | Project Version   : 1.0.0
+2026-07-14 09:08:06 | INFO     | Test Size         : 0.2
+2026-07-14 09:08:06 | INFO     | Random State      : 42
+2026-07-14 09:08:06 | INFO     | Supported Files   : ['csv']
+2026-07-14 09:08:06 | INFO     | Environment       : development
+2026-07-14 09:08:06 | INFO     | Debug Mode        : True
+2026-07-14 09:12:54 | INFO     | Project Started
+2026-07-14 09:12:54 | INFO     | Project Name      : AutoDS
+2026-07-14 09:12:54 | INFO     | Project Version   : 1.0.0
+2026-07-14 09:12:54 | INFO     | Test Size         : 0.2
+2026-07-14 09:12:54 | INFO     | Random State      : 42
+2026-07-14 09:12:54 | INFO     | Supported Files   : ['csv']
+2026-07-14 09:12:54 | INFO     | Environment       : development
+2026-07-14 09:12:54 | INFO     | Debug Mode        : True

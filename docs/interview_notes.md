@@ -521,3 +521,89 @@ A common interview question is:
 The expected answer is:
 
 > "In an Environment Variable, not inside the source code."
+
+---
+
+# Phase 2 – Configuration & Logging
+
+# Step 2.5 – Logging System
+
+---
+
+## Question 1
+
+**What is logging?**
+
+### Answer
+
+Logging is the process of recording application events while a program is running.
+
+It helps developers monitor, debug, and maintain software.
+
+---
+
+## Question 2
+
+**Why is logging preferred over `print()`?**
+
+### Answer
+
+Logging provides:
+
+- Timestamps
+- Severity levels
+- Permanent log files
+- Better debugging
+- Production monitoring
+
+Unlike `print()`, logs can be stored and reviewed later.
+
+---
+
+## Question 3
+
+**What are the main logging levels?**
+
+### Answer
+
+- DEBUG
+- INFO
+- WARNING
+- ERROR
+- CRITICAL
+
+Each level represents a different severity of application events.
+
+---
+
+## Question 4
+
+**Why should logging be configured only once?**
+
+### Answer
+
+Centralizing logging ensures consistent formatting, avoids duplicate configuration, and allows every module to reuse the same logger.
+
+---
+
+## Question 5
+
+**Why was the log file name stored in `config.py`?**
+
+### Answer
+
+The log file name is a configuration value.
+
+Keeping it inside `config.py` follows the principle of separating configuration from implementation and makes future changes easier.
+
+---
+
+## Interview Tip
+
+A common interview question is:
+
+> "When would you use logging instead of `print()`?"
+
+A good answer is:
+
+> "`print()` is useful for quick debugging during development, whereas logging is the standard solution for recording application events in production software."

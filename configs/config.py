@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 import os
+import logging
 
 load_dotenv()
 
@@ -22,3 +23,7 @@ SUPPORTED_FILE_TYPES = ["csv"]
 RANDOM_STATE = 42
 
 TEST_SIZE = 0.2
+
+LOG_FILE_NAME = "autods.log"
+
+LOG_LEVEL = logging.INFO

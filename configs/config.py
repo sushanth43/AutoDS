@@ -1,3 +1,10 @@
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+APP_ENV = os.getenv("APP_ENV")
+DEBUG = os.getenv("DEBUG")
 """
 Configuration file for the AutoDS project.
 

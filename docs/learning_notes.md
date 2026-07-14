@@ -572,3 +572,185 @@ This runs the application as a module within the project structure, allowing imp
 - Python searches modules using `sys.path`.
 - The execution method affects imports.
 - `python -m` is the recommended approach for structured projects.
+
+---
+
+# Step 2.4 – Environment Variables
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- What Environment Variables are.
+- Why they are used in professional software.
+- The difference between Configuration and Environment Variables.
+- What a `.env` file is.
+- How to load Environment Variables in Python.
+- How AutoDS uses Environment Variables.
+
+---
+
+## Part 2.4.1 – What are Environment Variables?
+
+### Definition
+
+Environment Variables are values stored outside the application's source code that are made available to the application at runtime.
+
+They are primarily used to store sensitive or machine-specific information that should not be hardcoded into the project's source code.
+
+---
+
+### Why are Environment Variables Needed?
+
+If sensitive information such as API keys, passwords, or database credentials are written directly into source code, anyone with access to the repository can view them.
+
+This creates serious security risks, especially when projects are hosted on GitHub.
+
+Environment Variables separate sensitive information from the application's source code.
+
+---
+
+### Common Examples
+
+- OpenAI API Keys
+- Gemini API Keys
+- Database URLs
+- Database Passwords
+- JWT Secrets
+- Email Credentials
+- AWS Credentials
+
+---
+
+## Part 2.4.2 – Why Environment Variables Matter
+
+Professional applications are often deployed in multiple environments such as:
+
+- Development
+- Testing
+- Production
+
+Each environment may require different credentials or configuration values.
+
+Instead of modifying the source code for each environment, Environment Variables allow the application to use different values while keeping the same codebase.
+
+This improves:
+
+- Security
+- Maintainability
+- Portability
+- Deployment
+
+---
+
+## Part 2.4.3 – Configuration vs Environment Variables
+
+### Configuration (`config.py`)
+
+Configuration stores project settings that define how the application behaves.
+
+Examples:
+
+- Project Name
+- Version
+- Random State
+- Test Size
+- Supported File Types
+- Logging Level
+
+Configuration values are generally safe to store inside the repository.
+
+---
+
+### Environment Variables
+
+Environment Variables store sensitive or machine-specific information.
+
+Examples:
+
+- API Keys
+- Database Passwords
+- Database URLs
+- Secret Keys
+- Email Passwords
+
+These values should never be committed to GitHub.
+
+---
+
+### Decision Rule
+
+When deciding where a value belongs, ask:
+
+> "Is it safe if this value becomes public on GitHub?"
+
+If the answer is **Yes**, it belongs in `config.py`.
+
+If the answer is **No**, it belongs in an Environment Variable.
+
+---
+
+## Part 2.4.4 – `.env` Files
+
+A `.env` file is a simple text file used to store Environment Variables during development.
+
+Example:
+
+```env
+APP_ENV=development
+DEBUG=True
+```
+
+The `.env` file should always be added to `.gitignore` so that sensitive information is never uploaded to GitHub.
+
+---
+
+## Part 2.4.5 – Implementing Environment Variables in AutoDS
+
+AutoDS uses the `python-dotenv` package to load Environment Variables.
+
+Implementation steps:
+
+1. Install `python-dotenv`.
+2. Create a `.env` file.
+3. Load the file using:
+
+```python
+from dotenv import load_dotenv
+
+load_dotenv()
+```
+
+4. Read variables using:
+
+```python
+import os
+
+APP_ENV = os.getenv("APP_ENV")
+DEBUG = os.getenv("DEBUG")
+```
+
+---
+
+## Best Practices
+
+- Never hardcode API keys.
+- Never commit `.env` files.
+- Store secrets outside the source code.
+- Keep configuration and secrets separate.
+- Use `.gitignore` to exclude `.env`.
+
+---
+
+## Key Takeaways
+
+- Environment Variables improve application security.
+- `.env` files simplify local development.
+- `python-dotenv` loads Environment Variables into Python.
+- Configuration and Environment Variables serve different purposes.

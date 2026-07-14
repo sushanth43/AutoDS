@@ -458,3 +458,55 @@ Centralized configuration improves maintainability, readability, consistency, an
 As AutoDS grows, additional configuration values can be added without modifying existing business logic.
 
 This keeps the project modular and easier to maintain.
+
+---
+
+# Engineering Decision 009
+
+## Phase
+
+Phase 2 – Configuration & Logging
+
+## Topic
+
+Environment Variable Management
+
+## Decision
+
+Use Environment Variables to store sensitive and environment-specific information.
+
+During development, AutoDS will use a `.env` file together with the `python-dotenv` package to load these values.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Hardcode secrets inside Python files.
+
+### Option B ✅ (Selected)
+
+Store secrets in Environment Variables and load them using `python-dotenv`.
+
+---
+
+## Reason
+
+Separating secrets from source code improves security, prevents accidental exposure on GitHub, and allows different environments (development, testing, production) to use different values without modifying the application code.
+
+---
+
+## Advantages
+
+- Improved security
+- Cleaner source code
+- Environment-specific configuration
+- Easier deployment
+- Follows industry best practices
+
+---
+
+## Future Impact
+
+Future integrations such as OpenAI, databases, email services, and cloud deployments will use Environment Variables instead of hardcoded credentials.

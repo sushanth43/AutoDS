@@ -415,3 +415,109 @@ Common causes include:
 - What is `sys.path`?
 - Why do we use `python -m`?
 - What causes `ModuleNotFoundError`?
+
+---
+
+# Phase 2 – Configuration & Logging
+
+# Step 2.4 – Environment Variables
+
+---
+
+## Question 1
+
+**What are Environment Variables?**
+
+### Answer
+
+Environment Variables are values stored outside the application's source code that are made available to the application at runtime.
+
+They are commonly used to store sensitive information such as API keys, passwords, and database credentials.
+
+---
+
+## Question 2
+
+**Why should API keys not be hardcoded?**
+
+### Answer
+
+Hardcoding API keys exposes sensitive credentials if the source code is uploaded to GitHub.
+
+This can lead to unauthorized access, quota exhaustion, and security risks.
+
+---
+
+## Question 3
+
+**What is the difference between Configuration and Environment Variables?**
+
+### Answer
+
+Configuration controls how the application behaves and is generally safe to commit to the repository.
+
+Environment Variables store secrets or machine-specific information and should never be committed to version control.
+
+---
+
+## Question 4
+
+**What is a `.env` file?**
+
+### Answer
+
+A `.env` file stores Environment Variables during development.
+
+It allows developers to keep sensitive values outside the application's source code.
+
+---
+
+## Question 5
+
+**Why is `.env` added to `.gitignore`?**
+
+### Answer
+
+The `.env` file often contains sensitive credentials.
+
+Adding it to `.gitignore` prevents accidental commits to GitHub.
+
+---
+
+## Question 6
+
+**How do you access Environment Variables in Python?**
+
+### Answer
+
+Using the `os` module.
+
+Example:
+
+```python
+import os
+
+API_KEY = os.getenv("API_KEY")
+```
+
+---
+
+## Question 7
+
+**What is `python-dotenv`?**
+
+### Answer
+
+`python-dotenv` is a Python package that loads Environment Variables from a `.env` file into the application's runtime environment.
+
+---
+
+## Interview Tip
+
+A common interview question is:
+
+> "Where would you store an API key?"
+
+The expected answer is:
+
+> "In an Environment Variable, not inside the source code."

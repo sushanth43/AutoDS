@@ -1,5 +1,6 @@
 from configs.config import APP_ENV, DEBUG
 from src.logger import logger
+from src.exceptions import DatasetNotFoundError
 
 from configs.config import (
     PROJECT_NAME,
@@ -29,3 +30,7 @@ print(f"Supported Files   : {SUPPORTED_FILE_TYPES}")
 print(f"Environment       : {APP_ENV}")
 print(f"Debug Mode        : {DEBUG}")
 
+try:
+    raise DatasetNotFoundError("Dataset 'train.csv' not found.")
+except DatasetNotFoundError as e:
+    logger.error(e)

@@ -22,3 +22,12 @@
 2026-07-14 09:12:54 | INFO     | Supported Files   : ['csv']
 2026-07-14 09:12:54 | INFO     | Environment       : development
 2026-07-14 09:12:54 | INFO     | Debug Mode        : True
+2026-07-14 09:22:15 | INFO     | Project Started
+2026-07-14 09:22:15 | INFO     | Project Name      : AutoDS
+2026-07-14 09:22:15 | INFO     | Project Version   : 1.0.0
+2026-07-14 09:22:15 | INFO     | Test Size         : 0.2
+2026-07-14 09:22:15 | INFO     | Random State      : 42
+2026-07-14 09:22:15 | INFO     | Supported Files   : ['csv']
+2026-07-14 09:22:15 | INFO     | Environment       : development
+2026-07-14 09:22:15 | INFO     | Debug Mode        : True
+2026-07-14 09:22:15 | ERROR    | Dataset 'train.csv' not found.

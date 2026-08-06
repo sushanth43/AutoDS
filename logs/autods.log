@@ -5056,3 +5056,7 @@ LinearRegression does not accept missing values encoded as NaN natively. For sup
 2026-08-06 12:19:22 | INFO     | Prediction preprocessing completed.
 2026-08-06 12:19:22 | INFO     | Predictions generated successfully.
 2026-08-06 12:19:22 | INFO     | Predictions saved to predictions.csv
+2026-08-06 12:22:00 | INFO     | DataCleaner initialized.
+2026-08-06 12:22:00 | INFO     | Handling missing values using 'mean' strategy.
+2026-08-06 12:22:00 | INFO     | Filled missing values in 'Age' using mean.
+2026-08-06 12:22:00 | INFO     | Handling missing values using 'mode' strategy.

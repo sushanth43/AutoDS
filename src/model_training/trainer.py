@@ -8,7 +8,7 @@ models, training them, and evaluating their performance.
 
 import json
 from pathlib import Path
-
+import numpy as np
 import joblib
 import pandas as pd
 
@@ -287,11 +287,11 @@ class Trainer:
                     predictions,
                 )
 
-                rmse = mean_squared_error(
+
+                rmse = np.sqrt(mean_squared_error(
                     self.y_test,
                     predictions,
-                    squared=False,
-                )
+                ))
 
                 r2 = r2_score(
                     self.y_test,

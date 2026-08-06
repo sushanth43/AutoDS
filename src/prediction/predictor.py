@@ -165,7 +165,7 @@ class Predictor:
                 )
             )
 
-        if encoding_method == "Label Encoding":
+        if encoding_method in ["label", "Label Encoding"]:
 
             for (
                 column,
@@ -205,7 +205,7 @@ class Predictor:
                 feature_names
             ]
 
-        elif encoding_method == "One-Hot Encoding":
+        elif encoding_method in ["onehot", "One-Hot Encoding"]:
 
             categorical_columns = (
                 df.select_dtypes(
@@ -231,6 +231,9 @@ class Predictor:
             df = df[
                 feature_names
             ]
+
+
+        
 
         if self.scaler is not None:
 

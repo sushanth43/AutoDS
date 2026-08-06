@@ -4089,3 +4089,970 @@ LinearRegression does not accept missing values encoded as NaN natively. For sup
 2026-08-06 10:52:50 | INFO     | Predictions generated successfully.
 2026-08-06 10:52:50 | INFO     | Predictions saved to predictions.csv
 2026-08-06 10:52:50 | INFO     | Prediction workflow completed.
+2026-08-06 11:34:53 | INFO     | DataCleaner initialized.
+2026-08-06 11:34:53 | INFO     | Handling missing values using 'median' strategy.
+2026-08-06 11:34:53 | INFO     | Filled missing values in 'Age' using median.
+2026-08-06 11:34:53 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 11:34:53 | INFO     | Filled missing values in 'Cabin' using mode.
+2026-08-06 11:34:53 | INFO     | Filled missing values in 'Embarked' using mode.
+2026-08-06 11:34:53 | INFO     | Removing duplicate rows.
+2026-08-06 11:34:53 | INFO     | Duplicate removal completed. Removed 0 duplicate row(s).
+2026-08-06 11:38:51 | INFO     | DataCleaner initialized.
+2026-08-06 11:38:51 | INFO     | Handling missing values using 'mean' strategy.
+2026-08-06 11:38:51 | INFO     | Filled missing values in 'Age' using mean.
+2026-08-06 11:38:51 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 11:38:51 | INFO     | Filled missing values in 'Cabin' using mode.
+2026-08-06 11:38:51 | INFO     | Filled missing values in 'Embarked' using mode.
+2026-08-06 11:38:51 | INFO     | Removing duplicate rows.
+2026-08-06 11:38:51 | INFO     | Duplicate removal completed. Removed 0 duplicate row(s).
+2026-08-06 11:39:12 | INFO     | FeatureEngineer initialized.
+2026-08-06 11:39:12 | INFO     | Selecting 'Survived' as the target column.
+2026-08-06 11:39:12 | INFO     | Target column selected successfully.
+2026-08-06 11:39:12 | INFO     | Encoding categorical columns using 'label'.
+2026-08-06 11:39:12 | INFO     | Detecting high-cardinality columns with threshold=0.5
+2026-08-06 11:39:12 | INFO     | Removing high-cardinality columns: ['Name', 'Ticket', 'Cabin']
+2026-08-06 11:39:12 | INFO     | Label encoding completed successfully.
+2026-08-06 11:39:12 | INFO     | Splitting dataset with test_size=0.2
+2026-08-06 11:39:12 | INFO     | Train/Test split completed successfully.
+2026-08-06 11:39:12 | INFO     | Scaling features using 'standard'.
+2026-08-06 11:39:12 | INFO     | Feature scaling completed successfully.
+2026-08-06 11:42:36 | INFO     | Trainer initialized.
+2026-08-06 11:42:36 | INFO     | Detecting problem type.
+2026-08-06 11:42:36 | INFO     | Problem type detected: Classification
+2026-08-06 11:42:36 | INFO     | Building model registry.
+2026-08-06 11:42:36 | INFO     | 6 models added to the registry.
+2026-08-06 11:42:36 | INFO     | Training all models.
+2026-08-06 11:42:36 | INFO     | Training Logistic Regression...
+2026-08-06 11:42:36 | INFO     | Logistic Regression trained successfully.
+2026-08-06 11:42:36 | INFO     | Training Decision Tree...
+2026-08-06 11:42:36 | INFO     | Decision Tree trained successfully.
+2026-08-06 11:42:36 | INFO     | Training Random Forest...
+2026-08-06 11:42:37 | INFO     | Random Forest trained successfully.
+2026-08-06 11:42:37 | INFO     | Training K-Nearest Neighbors...
+2026-08-06 11:42:37 | INFO     | K-Nearest Neighbors trained successfully.
+2026-08-06 11:42:37 | INFO     | Training Support Vector Machine...
+2026-08-06 11:42:37 | INFO     | Support Vector Machine trained successfully.
+2026-08-06 11:42:37 | INFO     | Training Naive Bayes...
+2026-08-06 11:42:37 | INFO     | Naive Bayes trained successfully.
+2026-08-06 11:42:37 | INFO     | All models trained successfully.
+2026-08-06 11:42:37 | INFO     | Evaluating trained models.
+2026-08-06 11:42:37 | INFO     | Evaluating Logistic Regression...
+2026-08-06 11:42:37 | INFO     | Logistic Regression evaluated successfully.
+2026-08-06 11:42:37 | INFO     | Evaluating Decision Tree...
+2026-08-06 11:42:37 | INFO     | Decision Tree evaluated successfully.
+2026-08-06 11:42:37 | INFO     | Evaluating Random Forest...
+2026-08-06 11:42:37 | INFO     | Random Forest evaluated successfully.
+2026-08-06 11:42:37 | INFO     | Evaluating K-Nearest Neighbors...
+2026-08-06 11:42:37 | INFO     | K-Nearest Neighbors evaluated successfully.
+2026-08-06 11:42:37 | INFO     | Evaluating Support Vector Machine...
+2026-08-06 11:42:37 | INFO     | Support Vector Machine evaluated successfully.
+2026-08-06 11:42:37 | INFO     | Evaluating Naive Bayes...
+2026-08-06 11:42:37 | INFO     | Naive Bayes evaluated successfully.
+2026-08-06 11:42:37 | INFO     | All models evaluated successfully.
+2026-08-06 11:42:37 | INFO     | Building results dataframe.
+2026-08-06 11:42:37 | INFO     | Results dataframe built successfully.
+2026-08-06 11:42:37 | INFO     | Identifying best model.
+2026-08-06 11:42:37 | INFO     | Best model identified: Support Vector Machine
+2026-08-06 11:42:37 | INFO     | Saving best model.
+2026-08-06 11:42:37 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 11:42:37 | INFO     | Saving scaler.
+2026-08-06 11:42:37 | INFO     | No scaler available to save.
+2026-08-06 11:42:37 | INFO     | Saving encoders.
+2026-08-06 11:42:37 | INFO     | No encoders available to save.
+2026-08-06 11:42:37 | INFO     | Saving metadata.
+2026-08-06 11:42:37 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 11:46:21 | INFO     | DataCleaner initialized.
+2026-08-06 11:46:21 | INFO     | Handling missing values using 'mean' strategy.
+2026-08-06 11:46:21 | INFO     | Filled missing values in 'Age' using mean.
+2026-08-06 11:46:21 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 11:46:21 | INFO     | Filled missing values in 'Cabin' using mode.
+2026-08-06 11:46:21 | INFO     | Filled missing values in 'Embarked' using mode.
+2026-08-06 11:46:21 | INFO     | Removing duplicate rows.
+2026-08-06 11:46:21 | INFO     | Duplicate removal completed. Removed 0 duplicate row(s).
+2026-08-06 11:46:24 | INFO     | FeatureEngineer initialized.
+2026-08-06 11:46:24 | INFO     | Selecting 'PassengerId' as the target column.
+2026-08-06 11:46:24 | INFO     | Target column selected successfully.
+2026-08-06 11:46:24 | INFO     | Encoding categorical columns using 'label'.
+2026-08-06 11:46:24 | INFO     | Detecting high-cardinality columns with threshold=0.5
+2026-08-06 11:46:24 | INFO     | Removing high-cardinality columns: ['Name', 'Ticket', 'Cabin']
+2026-08-06 11:46:24 | INFO     | Label encoding completed successfully.
+2026-08-06 11:46:24 | INFO     | Splitting dataset with test_size=0.2
+2026-08-06 11:46:24 | INFO     | Train/Test split completed successfully.
+2026-08-06 11:46:24 | INFO     | Scaling features using 'standard'.
+2026-08-06 11:46:24 | INFO     | Feature scaling completed successfully.
+2026-08-06 11:46:27 | INFO     | Trainer initialized.
+2026-08-06 11:46:27 | INFO     | Detecting problem type.
+2026-08-06 11:46:27 | INFO     | Problem type detected: Regression
+2026-08-06 11:46:27 | INFO     | Building model registry.
+2026-08-06 11:46:27 | INFO     | 5 models added to the registry.
+2026-08-06 11:46:27 | INFO     | Training all models.
+2026-08-06 11:46:27 | INFO     | Training Linear Regression...
+2026-08-06 11:46:27 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:46:27 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:46:27 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:46:27 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:46:27 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:46:27 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:46:27 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:46:27 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:46:28 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:46:28 | INFO     | All models trained successfully.
+2026-08-06 11:46:28 | INFO     | Evaluating trained models.
+2026-08-06 11:46:28 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:46:42 | INFO     | Trainer initialized.
+2026-08-06 11:46:42 | INFO     | Detecting problem type.
+2026-08-06 11:46:42 | INFO     | Problem type detected: Regression
+2026-08-06 11:46:42 | INFO     | Building model registry.
+2026-08-06 11:46:42 | INFO     | 5 models added to the registry.
+2026-08-06 11:46:42 | INFO     | Training all models.
+2026-08-06 11:46:42 | INFO     | Training Linear Regression...
+2026-08-06 11:46:42 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:46:42 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:46:42 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:46:42 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:46:43 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:46:43 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:46:43 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:46:43 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:46:43 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:46:43 | INFO     | All models trained successfully.
+2026-08-06 11:46:43 | INFO     | Evaluating trained models.
+2026-08-06 11:46:43 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:46:45 | INFO     | Trainer initialized.
+2026-08-06 11:46:45 | INFO     | Detecting problem type.
+2026-08-06 11:46:45 | INFO     | Problem type detected: Regression
+2026-08-06 11:46:45 | INFO     | Building model registry.
+2026-08-06 11:46:45 | INFO     | 5 models added to the registry.
+2026-08-06 11:46:45 | INFO     | Training all models.
+2026-08-06 11:46:45 | INFO     | Training Linear Regression...
+2026-08-06 11:46:45 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:46:45 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:46:45 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:46:45 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:46:46 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:46:46 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:46:46 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:46:46 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:46:46 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:46:46 | INFO     | All models trained successfully.
+2026-08-06 11:46:46 | INFO     | Evaluating trained models.
+2026-08-06 11:46:46 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:47:02 | INFO     | DataCleaner initialized.
+2026-08-06 11:47:02 | INFO     | Handling missing values using 'mean' strategy.
+2026-08-06 11:47:02 | INFO     | Filled missing values in 'Age' using mean.
+2026-08-06 11:47:02 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 11:47:02 | INFO     | Filled missing values in 'Cabin' using mode.
+2026-08-06 11:47:02 | INFO     | Filled missing values in 'Embarked' using mode.
+2026-08-06 11:47:02 | INFO     | Removing duplicate rows.
+2026-08-06 11:47:02 | INFO     | Duplicate removal completed. Removed 0 duplicate row(s).
+2026-08-06 11:47:04 | INFO     | FeatureEngineer initialized.
+2026-08-06 11:47:04 | INFO     | Selecting 'PassengerId' as the target column.
+2026-08-06 11:47:04 | INFO     | Target column selected successfully.
+2026-08-06 11:47:04 | INFO     | Encoding categorical columns using 'label'.
+2026-08-06 11:47:04 | INFO     | Detecting high-cardinality columns with threshold=0.5
+2026-08-06 11:47:04 | INFO     | Removing high-cardinality columns: ['Name', 'Ticket', 'Cabin']
+2026-08-06 11:47:04 | INFO     | Label encoding completed successfully.
+2026-08-06 11:47:04 | INFO     | Splitting dataset with test_size=0.2
+2026-08-06 11:47:04 | INFO     | Train/Test split completed successfully.
+2026-08-06 11:47:04 | INFO     | Scaling features using 'standard'.
+2026-08-06 11:47:04 | INFO     | Feature scaling completed successfully.
+2026-08-06 11:47:10 | INFO     | Trainer initialized.
+2026-08-06 11:47:10 | INFO     | Detecting problem type.
+2026-08-06 11:47:10 | INFO     | Problem type detected: Regression
+2026-08-06 11:47:10 | INFO     | Building model registry.
+2026-08-06 11:47:10 | INFO     | 5 models added to the registry.
+2026-08-06 11:47:10 | INFO     | Training all models.
+2026-08-06 11:47:10 | INFO     | Training Linear Regression...
+2026-08-06 11:47:10 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:47:10 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:47:10 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:47:10 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:47:11 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:47:11 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:47:11 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:47:11 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:47:11 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:47:11 | INFO     | All models trained successfully.
+2026-08-06 11:47:11 | INFO     | Evaluating trained models.
+2026-08-06 11:47:11 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:49:25 | INFO     | Trainer initialized.
+2026-08-06 11:49:25 | INFO     | Detecting problem type.
+2026-08-06 11:49:25 | INFO     | Problem type detected: Regression
+2026-08-06 11:49:25 | INFO     | Building model registry.
+2026-08-06 11:49:25 | INFO     | 5 models added to the registry.
+2026-08-06 11:49:25 | INFO     | Training all models.
+2026-08-06 11:49:25 | INFO     | Training Linear Regression...
+2026-08-06 11:49:25 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:49:25 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:49:25 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:49:25 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:49:26 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:49:26 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:49:26 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:49:26 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:49:26 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:49:26 | INFO     | All models trained successfully.
+2026-08-06 11:49:26 | INFO     | Evaluating trained models.
+2026-08-06 11:49:26 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:49:37 | INFO     | DataCleaner initialized.
+2026-08-06 11:49:37 | INFO     | Handling missing values using 'mean' strategy.
+2026-08-06 11:49:37 | INFO     | Filled missing values in 'Age' using mean.
+2026-08-06 11:49:37 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 11:49:37 | INFO     | Filled missing values in 'Cabin' using mode.
+2026-08-06 11:49:37 | INFO     | Filled missing values in 'Embarked' using mode.
+2026-08-06 11:49:37 | INFO     | Removing duplicate rows.
+2026-08-06 11:49:37 | INFO     | Duplicate removal completed. Removed 0 duplicate row(s).
+2026-08-06 11:49:40 | INFO     | FeatureEngineer initialized.
+2026-08-06 11:49:40 | INFO     | Selecting 'PassengerId' as the target column.
+2026-08-06 11:49:40 | INFO     | Target column selected successfully.
+2026-08-06 11:49:40 | INFO     | Encoding categorical columns using 'label'.
+2026-08-06 11:49:40 | INFO     | Detecting high-cardinality columns with threshold=0.5
+2026-08-06 11:49:40 | INFO     | Removing high-cardinality columns: ['Name', 'Ticket', 'Cabin']
+2026-08-06 11:49:40 | INFO     | Label encoding completed successfully.
+2026-08-06 11:49:40 | INFO     | Splitting dataset with test_size=0.2
+2026-08-06 11:49:40 | INFO     | Train/Test split completed successfully.
+2026-08-06 11:49:40 | INFO     | Scaling features using 'standard'.
+2026-08-06 11:49:40 | INFO     | Feature scaling completed successfully.
+2026-08-06 11:49:43 | INFO     | Trainer initialized.
+2026-08-06 11:49:43 | INFO     | Detecting problem type.
+2026-08-06 11:49:43 | INFO     | Problem type detected: Regression
+2026-08-06 11:49:43 | INFO     | Building model registry.
+2026-08-06 11:49:43 | INFO     | 5 models added to the registry.
+2026-08-06 11:49:43 | INFO     | Training all models.
+2026-08-06 11:49:43 | INFO     | Training Linear Regression...
+2026-08-06 11:49:43 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:49:43 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:49:43 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:49:44 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:49:44 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:49:44 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:49:44 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:49:44 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:49:44 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:49:44 | INFO     | All models trained successfully.
+2026-08-06 11:49:44 | INFO     | Evaluating trained models.
+2026-08-06 11:49:44 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:51:02 | INFO     | Trainer initialized.
+2026-08-06 11:51:02 | INFO     | Detecting problem type.
+2026-08-06 11:51:02 | INFO     | Problem type detected: Regression
+2026-08-06 11:51:02 | INFO     | Building model registry.
+2026-08-06 11:51:02 | INFO     | 5 models added to the registry.
+2026-08-06 11:51:02 | INFO     | Training all models.
+2026-08-06 11:51:02 | INFO     | Training Linear Regression...
+2026-08-06 11:51:03 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:51:03 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:51:03 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:51:03 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:51:03 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:51:03 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:51:03 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:51:03 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:51:03 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:51:03 | INFO     | All models trained successfully.
+2026-08-06 11:51:03 | INFO     | Evaluating trained models.
+2026-08-06 11:51:03 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:51:11 | INFO     | FeatureEngineer initialized.
+2026-08-06 11:51:11 | INFO     | Selecting 'PassengerId' as the target column.
+2026-08-06 11:51:11 | INFO     | Target column selected successfully.
+2026-08-06 11:51:11 | INFO     | Encoding categorical columns using 'label'.
+2026-08-06 11:51:11 | INFO     | Detecting high-cardinality columns with threshold=0.5
+2026-08-06 11:51:11 | INFO     | Removing high-cardinality columns: ['Name', 'Ticket', 'Cabin']
+2026-08-06 11:51:11 | INFO     | Label encoding completed successfully.
+2026-08-06 11:51:11 | INFO     | Splitting dataset with test_size=0.2
+2026-08-06 11:51:11 | INFO     | Train/Test split completed successfully.
+2026-08-06 11:51:11 | INFO     | Scaling features using 'standard'.
+2026-08-06 11:51:11 | INFO     | Feature scaling completed successfully.
+2026-08-06 11:51:15 | INFO     | Trainer initialized.
+2026-08-06 11:51:15 | INFO     | Detecting problem type.
+2026-08-06 11:51:15 | INFO     | Problem type detected: Regression
+2026-08-06 11:51:15 | INFO     | Building model registry.
+2026-08-06 11:51:15 | INFO     | 5 models added to the registry.
+2026-08-06 11:51:15 | INFO     | Training all models.
+2026-08-06 11:51:15 | INFO     | Training Linear Regression...
+2026-08-06 11:51:15 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:51:15 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:51:15 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:51:15 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:51:15 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:51:15 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:51:15 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:51:15 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:51:16 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:51:16 | INFO     | All models trained successfully.
+2026-08-06 11:51:16 | INFO     | Evaluating trained models.
+2026-08-06 11:51:16 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:52:37 | INFO     | DataCleaner initialized.
+2026-08-06 11:52:37 | INFO     | Handling missing values using 'mean' strategy.
+2026-08-06 11:52:37 | INFO     | Filled missing values in 'Age' using mean.
+2026-08-06 11:52:37 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 11:52:37 | INFO     | Filled missing values in 'Cabin' using mode.
+2026-08-06 11:52:37 | INFO     | Filled missing values in 'Embarked' using mode.
+2026-08-06 11:52:37 | INFO     | Removing duplicate rows.
+2026-08-06 11:52:37 | INFO     | Duplicate removal completed. Removed 0 duplicate row(s).
+2026-08-06 11:52:44 | INFO     | FeatureEngineer initialized.
+2026-08-06 11:52:44 | INFO     | Selecting 'PassengerId' as the target column.
+2026-08-06 11:52:44 | INFO     | Target column selected successfully.
+2026-08-06 11:52:44 | INFO     | Encoding categorical columns using 'label'.
+2026-08-06 11:52:44 | INFO     | Detecting high-cardinality columns with threshold=0.5
+2026-08-06 11:52:44 | INFO     | Removing high-cardinality columns: ['Name', 'Ticket', 'Cabin']
+2026-08-06 11:52:44 | INFO     | Label encoding completed successfully.
+2026-08-06 11:52:44 | INFO     | Splitting dataset with test_size=0.2
+2026-08-06 11:52:44 | INFO     | Train/Test split completed successfully.
+2026-08-06 11:52:44 | INFO     | Scaling features using 'standard'.
+2026-08-06 11:52:45 | INFO     | Feature scaling completed successfully.
+2026-08-06 11:52:54 | INFO     | Trainer initialized.
+2026-08-06 11:52:54 | INFO     | Detecting problem type.
+2026-08-06 11:52:54 | INFO     | Problem type detected: Regression
+2026-08-06 11:52:54 | INFO     | Building model registry.
+2026-08-06 11:52:54 | INFO     | 5 models added to the registry.
+2026-08-06 11:52:54 | INFO     | Training all models.
+2026-08-06 11:52:54 | INFO     | Training Linear Regression...
+2026-08-06 11:52:54 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:52:54 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:52:54 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:52:54 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:52:54 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:52:54 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:52:54 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:52:54 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:52:54 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:52:54 | INFO     | All models trained successfully.
+2026-08-06 11:52:54 | INFO     | Evaluating trained models.
+2026-08-06 11:52:54 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:54:02 | INFO     | Trainer initialized.
+2026-08-06 11:54:02 | INFO     | Detecting problem type.
+2026-08-06 11:54:02 | INFO     | Problem type detected: Regression
+2026-08-06 11:54:02 | INFO     | Building model registry.
+2026-08-06 11:54:02 | INFO     | 5 models added to the registry.
+2026-08-06 11:54:02 | INFO     | Training all models.
+2026-08-06 11:54:02 | INFO     | Training Linear Regression...
+2026-08-06 11:54:02 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:54:02 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:54:02 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:54:02 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:54:02 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:54:02 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:54:02 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:54:02 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:54:02 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:54:02 | INFO     | All models trained successfully.
+2026-08-06 11:54:02 | INFO     | Evaluating trained models.
+2026-08-06 11:54:02 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:54:52 | INFO     | DataCleaner initialized.
+2026-08-06 11:54:52 | INFO     | Handling missing values using 'mean' strategy.
+2026-08-06 11:54:52 | INFO     | Filled missing values in 'Age' using mean.
+2026-08-06 11:54:52 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 11:54:52 | INFO     | Filled missing values in 'Cabin' using mode.
+2026-08-06 11:54:52 | INFO     | Filled missing values in 'Embarked' using mode.
+2026-08-06 11:54:52 | INFO     | Removing duplicate rows.
+2026-08-06 11:54:52 | INFO     | Duplicate removal completed. Removed 0 duplicate row(s).
+2026-08-06 11:55:03 | INFO     | FeatureEngineer initialized.
+2026-08-06 11:55:03 | INFO     | Selecting 'PassengerId' as the target column.
+2026-08-06 11:55:03 | INFO     | Target column selected successfully.
+2026-08-06 11:55:03 | INFO     | Encoding categorical columns using 'label'.
+2026-08-06 11:55:03 | INFO     | Detecting high-cardinality columns with threshold=0.5
+2026-08-06 11:55:03 | INFO     | Removing high-cardinality columns: ['Name', 'Ticket', 'Cabin']
+2026-08-06 11:55:03 | INFO     | Label encoding completed successfully.
+2026-08-06 11:55:03 | INFO     | Splitting dataset with test_size=0.2
+2026-08-06 11:55:03 | INFO     | Train/Test split completed successfully.
+2026-08-06 11:55:03 | INFO     | Scaling features using 'standard'.
+2026-08-06 11:55:03 | INFO     | Feature scaling completed successfully.
+2026-08-06 11:55:16 | INFO     | Trainer initialized.
+2026-08-06 11:55:16 | INFO     | Detecting problem type.
+2026-08-06 11:55:16 | INFO     | Problem type detected: Regression
+2026-08-06 11:55:16 | INFO     | Building model registry.
+2026-08-06 11:55:16 | INFO     | 5 models added to the registry.
+2026-08-06 11:55:16 | INFO     | Training all models.
+2026-08-06 11:55:16 | INFO     | Training Linear Regression...
+2026-08-06 11:55:16 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:55:16 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:55:16 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:55:16 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:55:16 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:55:16 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:55:16 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:55:16 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:55:16 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:55:16 | INFO     | All models trained successfully.
+2026-08-06 11:55:16 | INFO     | Evaluating trained models.
+2026-08-06 11:55:16 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:57:17 | INFO     | DataCleaner initialized.
+2026-08-06 11:57:17 | INFO     | Handling missing values using 'mean' strategy.
+2026-08-06 11:57:17 | INFO     | Filled missing values in 'Age' using mean.
+2026-08-06 11:57:17 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 11:57:17 | INFO     | Filled missing values in 'Cabin' using mode.
+2026-08-06 11:57:17 | INFO     | Filled missing values in 'Embarked' using mode.
+2026-08-06 11:57:17 | INFO     | Removing duplicate rows.
+2026-08-06 11:57:17 | INFO     | Duplicate removal completed. Removed 0 duplicate row(s).
+2026-08-06 11:57:26 | INFO     | DataCleaner initialized.
+2026-08-06 11:57:26 | INFO     | Handling missing values using 'mean' strategy.
+2026-08-06 11:57:26 | INFO     | Filled missing values in 'Age' using mean.
+2026-08-06 11:57:26 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 11:57:26 | INFO     | Filled missing values in 'Cabin' using mode.
+2026-08-06 11:57:26 | INFO     | Filled missing values in 'Embarked' using mode.
+2026-08-06 11:57:26 | INFO     | Removing duplicate rows.
+2026-08-06 11:57:26 | INFO     | Duplicate removal completed. Removed 0 duplicate row(s).
+2026-08-06 11:57:33 | INFO     | FeatureEngineer initialized.
+2026-08-06 11:57:33 | INFO     | Selecting 'PassengerId' as the target column.
+2026-08-06 11:57:33 | INFO     | Target column selected successfully.
+2026-08-06 11:57:33 | INFO     | Encoding categorical columns using 'label'.
+2026-08-06 11:57:33 | INFO     | Detecting high-cardinality columns with threshold=0.5
+2026-08-06 11:57:33 | INFO     | Removing high-cardinality columns: ['Name', 'Ticket', 'Cabin']
+2026-08-06 11:57:33 | INFO     | Label encoding completed successfully.
+2026-08-06 11:57:33 | INFO     | Splitting dataset with test_size=0.2
+2026-08-06 11:57:33 | INFO     | Train/Test split completed successfully.
+2026-08-06 11:57:33 | INFO     | Scaling features using 'standard'.
+2026-08-06 11:57:33 | INFO     | Feature scaling completed successfully.
+2026-08-06 11:57:41 | INFO     | Trainer initialized.
+2026-08-06 11:57:41 | INFO     | Detecting problem type.
+2026-08-06 11:57:41 | INFO     | Problem type detected: Regression
+2026-08-06 11:57:41 | INFO     | Building model registry.
+2026-08-06 11:57:41 | INFO     | 5 models added to the registry.
+2026-08-06 11:57:41 | INFO     | Training all models.
+2026-08-06 11:57:41 | INFO     | Training Linear Regression...
+2026-08-06 11:57:41 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:57:41 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:57:41 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:57:41 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:57:41 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:57:41 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:57:41 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:57:41 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:57:41 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:57:41 | INFO     | All models trained successfully.
+2026-08-06 11:57:41 | INFO     | Evaluating trained models.
+2026-08-06 11:57:41 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:57:41 | INFO     | Linear Regression evaluated successfully.
+2026-08-06 11:57:41 | INFO     | Evaluating Decision Tree Regressor...
+2026-08-06 11:57:41 | INFO     | Decision Tree Regressor evaluated successfully.
+2026-08-06 11:57:41 | INFO     | Evaluating Random Forest Regressor...
+2026-08-06 11:57:41 | INFO     | Random Forest Regressor evaluated successfully.
+2026-08-06 11:57:41 | INFO     | Evaluating K-Nearest Neighbors Regressor...
+2026-08-06 11:57:41 | INFO     | K-Nearest Neighbors Regressor evaluated successfully.
+2026-08-06 11:57:41 | INFO     | Evaluating Support Vector Regressor...
+2026-08-06 11:57:41 | INFO     | Support Vector Regressor evaluated successfully.
+2026-08-06 11:57:41 | INFO     | All models evaluated successfully.
+2026-08-06 11:57:41 | INFO     | Building results dataframe.
+2026-08-06 11:57:41 | INFO     | Results dataframe built successfully.
+2026-08-06 11:57:41 | INFO     | Identifying best model.
+2026-08-06 11:57:41 | INFO     | Best model identified: Support Vector Regressor
+2026-08-06 11:57:41 | INFO     | Saving best model.
+2026-08-06 11:57:41 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 11:57:41 | INFO     | Saving scaler.
+2026-08-06 11:57:41 | INFO     | No scaler available to save.
+2026-08-06 11:57:41 | INFO     | Saving encoders.
+2026-08-06 11:57:41 | INFO     | No encoders available to save.
+2026-08-06 11:57:41 | INFO     | Saving metadata.
+2026-08-06 11:57:41 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 11:58:43 | INFO     | Trainer initialized.
+2026-08-06 11:58:43 | INFO     | Detecting problem type.
+2026-08-06 11:58:43 | INFO     | Problem type detected: Regression
+2026-08-06 11:58:43 | INFO     | Building model registry.
+2026-08-06 11:58:43 | INFO     | 5 models added to the registry.
+2026-08-06 11:58:43 | INFO     | Training all models.
+2026-08-06 11:58:43 | INFO     | Training Linear Regression...
+2026-08-06 11:58:43 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:58:43 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:58:43 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:58:43 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:58:43 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:58:43 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:58:43 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:58:43 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:58:43 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:58:43 | INFO     | All models trained successfully.
+2026-08-06 11:58:43 | INFO     | Evaluating trained models.
+2026-08-06 11:58:43 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:58:43 | INFO     | Linear Regression evaluated successfully.
+2026-08-06 11:58:43 | INFO     | Evaluating Decision Tree Regressor...
+2026-08-06 11:58:43 | INFO     | Decision Tree Regressor evaluated successfully.
+2026-08-06 11:58:43 | INFO     | Evaluating Random Forest Regressor...
+2026-08-06 11:58:43 | INFO     | Random Forest Regressor evaluated successfully.
+2026-08-06 11:58:43 | INFO     | Evaluating K-Nearest Neighbors Regressor...
+2026-08-06 11:58:43 | INFO     | K-Nearest Neighbors Regressor evaluated successfully.
+2026-08-06 11:58:43 | INFO     | Evaluating Support Vector Regressor...
+2026-08-06 11:58:43 | INFO     | Support Vector Regressor evaluated successfully.
+2026-08-06 11:58:43 | INFO     | All models evaluated successfully.
+2026-08-06 11:58:43 | INFO     | Building results dataframe.
+2026-08-06 11:58:43 | INFO     | Results dataframe built successfully.
+2026-08-06 11:58:43 | INFO     | Identifying best model.
+2026-08-06 11:58:43 | INFO     | Best model identified: Support Vector Regressor
+2026-08-06 11:58:43 | INFO     | Saving best model.
+2026-08-06 11:58:43 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 11:58:43 | INFO     | Saving scaler.
+2026-08-06 11:58:43 | INFO     | No scaler available to save.
+2026-08-06 11:58:43 | INFO     | Saving encoders.
+2026-08-06 11:58:43 | INFO     | No encoders available to save.
+2026-08-06 11:58:43 | INFO     | Saving metadata.
+2026-08-06 11:58:43 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 11:58:46 | INFO     | Trainer initialized.
+2026-08-06 11:58:46 | INFO     | Detecting problem type.
+2026-08-06 11:58:46 | INFO     | Problem type detected: Regression
+2026-08-06 11:58:46 | INFO     | Building model registry.
+2026-08-06 11:58:46 | INFO     | 5 models added to the registry.
+2026-08-06 11:58:46 | INFO     | Training all models.
+2026-08-06 11:58:46 | INFO     | Training Linear Regression...
+2026-08-06 11:58:46 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:58:46 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:58:46 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:58:46 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:58:46 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:58:46 | INFO     | Trainer initialized.
+2026-08-06 11:58:46 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:58:46 | INFO     | Detecting problem type.
+2026-08-06 11:58:46 | INFO     | Problem type detected: Regression
+2026-08-06 11:58:46 | INFO     | Building model registry.
+2026-08-06 11:58:46 | INFO     | 5 models added to the registry.
+2026-08-06 11:58:46 | INFO     | Training all models.
+2026-08-06 11:58:46 | INFO     | Training Linear Regression...
+2026-08-06 11:58:46 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:58:46 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:58:46 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:58:46 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:58:46 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:58:46 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:58:46 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:58:46 | INFO     | All models trained successfully.
+2026-08-06 11:58:46 | INFO     | Evaluating trained models.
+2026-08-06 11:58:46 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:58:46 | INFO     | Linear Regression evaluated successfully.
+2026-08-06 11:58:46 | INFO     | Evaluating Decision Tree Regressor...
+2026-08-06 11:58:46 | INFO     | Decision Tree Regressor evaluated successfully.
+2026-08-06 11:58:46 | INFO     | Evaluating Random Forest Regressor...
+2026-08-06 11:58:46 | INFO     | Random Forest Regressor evaluated successfully.
+2026-08-06 11:58:46 | INFO     | Evaluating K-Nearest Neighbors Regressor...
+2026-08-06 11:58:46 | INFO     | K-Nearest Neighbors Regressor evaluated successfully.
+2026-08-06 11:58:46 | INFO     | Evaluating Support Vector Regressor...
+2026-08-06 11:58:46 | INFO     | Support Vector Regressor evaluated successfully.
+2026-08-06 11:58:46 | INFO     | All models evaluated successfully.
+2026-08-06 11:58:46 | INFO     | Building results dataframe.
+2026-08-06 11:58:46 | INFO     | Results dataframe built successfully.
+2026-08-06 11:58:46 | INFO     | Identifying best model.
+2026-08-06 11:58:46 | INFO     | Best model identified: Support Vector Regressor
+2026-08-06 11:58:46 | INFO     | Saving best model.
+2026-08-06 11:58:46 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 11:58:46 | INFO     | Saving scaler.
+2026-08-06 11:58:46 | INFO     | No scaler available to save.
+2026-08-06 11:58:46 | INFO     | Saving encoders.
+2026-08-06 11:58:46 | INFO     | No encoders available to save.
+2026-08-06 11:58:46 | INFO     | Saving metadata.
+2026-08-06 11:58:46 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 11:58:46 | INFO     | Trainer initialized.
+2026-08-06 11:58:46 | INFO     | Detecting problem type.
+2026-08-06 11:58:46 | INFO     | Problem type detected: Regression
+2026-08-06 11:58:46 | INFO     | Building model registry.
+2026-08-06 11:58:46 | INFO     | 5 models added to the registry.
+2026-08-06 11:58:46 | INFO     | Training all models.
+2026-08-06 11:58:46 | INFO     | Training Linear Regression...
+2026-08-06 11:58:46 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:58:46 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:58:46 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:58:46 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:58:47 | INFO     | Trainer initialized.
+2026-08-06 11:58:47 | INFO     | Detecting problem type.
+2026-08-06 11:58:47 | INFO     | Problem type detected: Regression
+2026-08-06 11:58:47 | INFO     | Building model registry.
+2026-08-06 11:58:47 | INFO     | 5 models added to the registry.
+2026-08-06 11:58:47 | INFO     | Training all models.
+2026-08-06 11:58:47 | INFO     | Training Linear Regression...
+2026-08-06 11:58:47 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:58:47 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:58:47 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:58:47 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:58:47 | INFO     | Trainer initialized.
+2026-08-06 11:58:47 | INFO     | Detecting problem type.
+2026-08-06 11:58:47 | INFO     | Problem type detected: Regression
+2026-08-06 11:58:47 | INFO     | Building model registry.
+2026-08-06 11:58:47 | INFO     | 5 models added to the registry.
+2026-08-06 11:58:47 | INFO     | Training all models.
+2026-08-06 11:58:47 | INFO     | Training Linear Regression...
+2026-08-06 11:58:47 | INFO     | Linear Regression trained successfully.
+2026-08-06 11:58:47 | INFO     | Training Decision Tree Regressor...
+2026-08-06 11:58:47 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 11:58:47 | INFO     | Training Random Forest Regressor...
+2026-08-06 11:58:47 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:58:47 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:58:47 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:58:47 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:58:47 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:58:47 | INFO     | All models trained successfully.
+2026-08-06 11:58:47 | INFO     | Evaluating trained models.
+2026-08-06 11:58:47 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:58:47 | INFO     | Linear Regression evaluated successfully.
+2026-08-06 11:58:47 | INFO     | Evaluating Decision Tree Regressor...
+2026-08-06 11:58:47 | INFO     | Decision Tree Regressor evaluated successfully.
+2026-08-06 11:58:47 | INFO     | Evaluating Random Forest Regressor...
+2026-08-06 11:58:47 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:58:47 | INFO     | Random Forest Regressor evaluated successfully.
+2026-08-06 11:58:47 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:58:47 | INFO     | Evaluating K-Nearest Neighbors Regressor...
+2026-08-06 11:58:47 | INFO     | K-Nearest Neighbors Regressor evaluated successfully.
+2026-08-06 11:58:47 | INFO     | Evaluating Support Vector Regressor...
+2026-08-06 11:58:47 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:58:47 | INFO     | Support Vector Regressor evaluated successfully.
+2026-08-06 11:58:47 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:58:47 | INFO     | All models evaluated successfully.
+2026-08-06 11:58:47 | INFO     | Building results dataframe.
+2026-08-06 11:58:47 | INFO     | Results dataframe built successfully.
+2026-08-06 11:58:47 | INFO     | Identifying best model.
+2026-08-06 11:58:47 | INFO     | Best model identified: Support Vector Regressor
+2026-08-06 11:58:47 | INFO     | Saving best model.
+2026-08-06 11:58:47 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 11:58:47 | INFO     | Saving scaler.
+2026-08-06 11:58:47 | INFO     | No scaler available to save.
+2026-08-06 11:58:47 | INFO     | Saving encoders.
+2026-08-06 11:58:47 | INFO     | No encoders available to save.
+2026-08-06 11:58:47 | INFO     | Saving metadata.
+2026-08-06 11:58:47 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:58:47 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 11:58:47 | INFO     | All models trained successfully.
+2026-08-06 11:58:47 | INFO     | Evaluating trained models.
+2026-08-06 11:58:47 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:58:47 | INFO     | Linear Regression evaluated successfully.
+2026-08-06 11:58:47 | INFO     | Evaluating Decision Tree Regressor...
+2026-08-06 11:58:47 | INFO     | Decision Tree Regressor evaluated successfully.
+2026-08-06 11:58:47 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:58:47 | INFO     | Evaluating Random Forest Regressor...
+2026-08-06 11:58:47 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:58:47 | INFO     | Random Forest Regressor evaluated successfully.
+2026-08-06 11:58:47 | INFO     | Evaluating K-Nearest Neighbors Regressor...
+2026-08-06 11:58:47 | INFO     | K-Nearest Neighbors Regressor evaluated successfully.
+2026-08-06 11:58:47 | INFO     | Evaluating Support Vector Regressor...
+2026-08-06 11:58:47 | INFO     | Support Vector Regressor evaluated successfully.
+2026-08-06 11:58:47 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:58:47 | INFO     | All models evaluated successfully.
+2026-08-06 11:58:47 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:58:47 | INFO     | Building results dataframe.
+2026-08-06 11:58:47 | INFO     | Results dataframe built successfully.
+2026-08-06 11:58:47 | INFO     | Identifying best model.
+2026-08-06 11:58:47 | INFO     | Best model identified: Support Vector Regressor
+2026-08-06 11:58:47 | INFO     | Saving best model.
+2026-08-06 11:58:47 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 11:58:47 | INFO     | Saving scaler.
+2026-08-06 11:58:47 | INFO     | No scaler available to save.
+2026-08-06 11:58:47 | INFO     | Saving encoders.
+2026-08-06 11:58:47 | INFO     | No encoders available to save.
+2026-08-06 11:58:47 | INFO     | Saving metadata.
+2026-08-06 11:58:47 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 11:58:47 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:58:47 | INFO     | All models trained successfully.
+2026-08-06 11:58:47 | INFO     | Evaluating trained models.
+2026-08-06 11:58:47 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:58:47 | INFO     | Linear Regression evaluated successfully.
+2026-08-06 11:58:47 | INFO     | Evaluating Decision Tree Regressor...
+2026-08-06 11:58:47 | INFO     | Decision Tree Regressor evaluated successfully.
+2026-08-06 11:58:47 | INFO     | Evaluating Random Forest Regressor...
+2026-08-06 11:58:47 | INFO     | Random Forest Regressor evaluated successfully.
+2026-08-06 11:58:47 | INFO     | Evaluating K-Nearest Neighbors Regressor...
+2026-08-06 11:58:47 | INFO     | K-Nearest Neighbors Regressor evaluated successfully.
+2026-08-06 11:58:47 | INFO     | Evaluating Support Vector Regressor...
+2026-08-06 11:58:48 | INFO     | Support Vector Regressor evaluated successfully.
+2026-08-06 11:58:48 | INFO     | All models evaluated successfully.
+2026-08-06 11:58:48 | INFO     | Building results dataframe.
+2026-08-06 11:58:48 | INFO     | Results dataframe built successfully.
+2026-08-06 11:58:48 | INFO     | Identifying best model.
+2026-08-06 11:58:48 | INFO     | Best model identified: Support Vector Regressor
+2026-08-06 11:58:48 | INFO     | Saving best model.
+2026-08-06 11:58:48 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 11:58:48 | INFO     | Saving scaler.
+2026-08-06 11:58:48 | INFO     | No scaler available to save.
+2026-08-06 11:58:48 | INFO     | Saving encoders.
+2026-08-06 11:58:48 | INFO     | No encoders available to save.
+2026-08-06 11:58:48 | INFO     | Saving metadata.
+2026-08-06 11:58:48 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 11:58:48 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 11:58:48 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 11:58:48 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 11:58:48 | INFO     | Training Support Vector Regressor...
+2026-08-06 11:58:48 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 11:58:48 | INFO     | All models trained successfully.
+2026-08-06 11:58:48 | INFO     | Evaluating trained models.
+2026-08-06 11:58:48 | INFO     | Evaluating Linear Regression...
+2026-08-06 11:58:48 | INFO     | Linear Regression evaluated successfully.
+2026-08-06 11:58:48 | INFO     | Evaluating Decision Tree Regressor...
+2026-08-06 11:58:48 | INFO     | Decision Tree Regressor evaluated successfully.
+2026-08-06 11:58:48 | INFO     | Evaluating Random Forest Regressor...
+2026-08-06 11:58:48 | INFO     | Random Forest Regressor evaluated successfully.
+2026-08-06 11:58:48 | INFO     | Evaluating K-Nearest Neighbors Regressor...
+2026-08-06 11:58:48 | INFO     | K-Nearest Neighbors Regressor evaluated successfully.
+2026-08-06 11:58:48 | INFO     | Evaluating Support Vector Regressor...
+2026-08-06 11:58:48 | INFO     | Support Vector Regressor evaluated successfully.
+2026-08-06 11:58:48 | INFO     | All models evaluated successfully.
+2026-08-06 11:58:48 | INFO     | Building results dataframe.
+2026-08-06 11:58:48 | INFO     | Results dataframe built successfully.
+2026-08-06 11:58:48 | INFO     | Identifying best model.
+2026-08-06 11:58:48 | INFO     | Best model identified: Support Vector Regressor
+2026-08-06 11:58:48 | INFO     | Saving best model.
+2026-08-06 11:58:48 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 11:58:48 | INFO     | Saving scaler.
+2026-08-06 11:58:48 | INFO     | No scaler available to save.
+2026-08-06 11:58:48 | INFO     | Saving encoders.
+2026-08-06 11:58:48 | INFO     | No encoders available to save.
+2026-08-06 11:58:48 | INFO     | Saving metadata.
+2026-08-06 11:58:48 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 12:01:23 | INFO     | Predictor initialized.
+2026-08-06 12:01:23 | INFO     | Model loaded from models\best_model.pkl
+2026-08-06 12:01:23 | INFO     | Metadata loaded from models\metadata.json
+2026-08-06 12:01:23 | INFO     | Scaler loaded from models\scaler.pkl
+2026-08-06 12:01:23 | INFO     | Encoders loaded from models\encoders.pkl
+2026-08-06 12:05:40 | INFO     | Trainer initialized.
+2026-08-06 12:05:40 | INFO     | Detecting problem type.
+2026-08-06 12:05:40 | INFO     | Problem type detected: Regression
+2026-08-06 12:05:40 | INFO     | Building model registry.
+2026-08-06 12:05:40 | INFO     | 5 models added to the registry.
+2026-08-06 12:05:40 | INFO     | Training all models.
+2026-08-06 12:05:40 | INFO     | Training Linear Regression...
+2026-08-06 12:05:40 | INFO     | Linear Regression trained successfully.
+2026-08-06 12:05:40 | INFO     | Training Decision Tree Regressor...
+2026-08-06 12:05:41 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 12:05:41 | INFO     | Training Random Forest Regressor...
+2026-08-06 12:05:41 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 12:05:41 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 12:05:41 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 12:05:41 | INFO     | Training Support Vector Regressor...
+2026-08-06 12:05:41 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 12:05:41 | INFO     | All models trained successfully.
+2026-08-06 12:05:41 | INFO     | Evaluating trained models.
+2026-08-06 12:05:41 | INFO     | Evaluating Linear Regression...
+2026-08-06 12:05:41 | INFO     | Linear Regression evaluated successfully.
+2026-08-06 12:05:41 | INFO     | Evaluating Decision Tree Regressor...
+2026-08-06 12:05:41 | INFO     | Decision Tree Regressor evaluated successfully.
+2026-08-06 12:05:41 | INFO     | Evaluating Random Forest Regressor...
+2026-08-06 12:05:41 | INFO     | Random Forest Regressor evaluated successfully.
+2026-08-06 12:05:41 | INFO     | Evaluating K-Nearest Neighbors Regressor...
+2026-08-06 12:05:41 | INFO     | K-Nearest Neighbors Regressor evaluated successfully.
+2026-08-06 12:05:41 | INFO     | Evaluating Support Vector Regressor...
+2026-08-06 12:05:41 | INFO     | Support Vector Regressor evaluated successfully.
+2026-08-06 12:05:41 | INFO     | All models evaluated successfully.
+2026-08-06 12:05:41 | INFO     | Building results dataframe.
+2026-08-06 12:05:41 | INFO     | Results dataframe built successfully.
+2026-08-06 12:05:41 | INFO     | Identifying best model.
+2026-08-06 12:05:41 | INFO     | Best model identified: Support Vector Regressor
+2026-08-06 12:05:41 | INFO     | Saving best model.
+2026-08-06 12:05:41 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 12:05:41 | INFO     | Saving scaler.
+2026-08-06 12:05:41 | INFO     | No scaler available to save.
+2026-08-06 12:05:41 | INFO     | Saving encoders.
+2026-08-06 12:05:41 | INFO     | No encoders available to save.
+2026-08-06 12:05:41 | INFO     | Saving metadata.
+2026-08-06 12:05:41 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 12:05:48 | INFO     | Predictor initialized.
+2026-08-06 12:05:48 | INFO     | Model loaded from models\best_model.pkl
+2026-08-06 12:05:48 | INFO     | Metadata loaded from models\metadata.json
+2026-08-06 12:05:48 | INFO     | Scaler loaded from models\scaler.pkl
+2026-08-06 12:05:48 | INFO     | Encoders loaded from models\encoders.pkl
+2026-08-06 12:09:04 | INFO     | FeatureEngineer initialized.
+2026-08-06 12:09:04 | INFO     | Selecting 'Survived' as the target column.
+2026-08-06 12:09:04 | INFO     | Target column selected successfully.
+2026-08-06 12:09:04 | INFO     | Encoding categorical columns using 'label'.
+2026-08-06 12:09:04 | INFO     | Detecting high-cardinality columns with threshold=0.5
+2026-08-06 12:09:04 | INFO     | Removing high-cardinality columns: ['Name', 'Ticket', 'Cabin']
+2026-08-06 12:09:04 | INFO     | Label encoding completed successfully.
+2026-08-06 12:09:04 | INFO     | Splitting dataset with test_size=0.2
+2026-08-06 12:09:04 | INFO     | Train/Test split completed successfully.
+2026-08-06 12:09:04 | INFO     | Scaling features using 'standard'.
+2026-08-06 12:09:04 | INFO     | Feature scaling completed successfully.
+2026-08-06 12:09:08 | INFO     | Trainer initialized.
+2026-08-06 12:09:08 | INFO     | Detecting problem type.
+2026-08-06 12:09:08 | INFO     | Problem type detected: Classification
+2026-08-06 12:09:08 | INFO     | Building model registry.
+2026-08-06 12:09:08 | INFO     | 6 models added to the registry.
+2026-08-06 12:09:08 | INFO     | Training all models.
+2026-08-06 12:09:08 | INFO     | Training Logistic Regression...
+2026-08-06 12:09:08 | INFO     | Logistic Regression trained successfully.
+2026-08-06 12:09:08 | INFO     | Training Decision Tree...
+2026-08-06 12:09:08 | INFO     | Decision Tree trained successfully.
+2026-08-06 12:09:08 | INFO     | Training Random Forest...
+2026-08-06 12:09:09 | INFO     | Random Forest trained successfully.
+2026-08-06 12:09:09 | INFO     | Training K-Nearest Neighbors...
+2026-08-06 12:09:09 | INFO     | K-Nearest Neighbors trained successfully.
+2026-08-06 12:09:09 | INFO     | Training Support Vector Machine...
+2026-08-06 12:09:09 | INFO     | Support Vector Machine trained successfully.
+2026-08-06 12:09:09 | INFO     | Training Naive Bayes...
+2026-08-06 12:09:09 | INFO     | Naive Bayes trained successfully.
+2026-08-06 12:09:09 | INFO     | All models trained successfully.
+2026-08-06 12:09:09 | INFO     | Evaluating trained models.
+2026-08-06 12:09:09 | INFO     | Evaluating Logistic Regression...
+2026-08-06 12:09:09 | INFO     | Logistic Regression evaluated successfully.
+2026-08-06 12:09:09 | INFO     | Evaluating Decision Tree...
+2026-08-06 12:09:09 | INFO     | Decision Tree evaluated successfully.
+2026-08-06 12:09:09 | INFO     | Evaluating Random Forest...
+2026-08-06 12:09:09 | INFO     | Random Forest evaluated successfully.
+2026-08-06 12:09:09 | INFO     | Evaluating K-Nearest Neighbors...
+2026-08-06 12:09:09 | INFO     | K-Nearest Neighbors evaluated successfully.
+2026-08-06 12:09:09 | INFO     | Evaluating Support Vector Machine...
+2026-08-06 12:09:09 | INFO     | Support Vector Machine evaluated successfully.
+2026-08-06 12:09:09 | INFO     | Evaluating Naive Bayes...
+2026-08-06 12:09:09 | INFO     | Naive Bayes evaluated successfully.
+2026-08-06 12:09:09 | INFO     | All models evaluated successfully.
+2026-08-06 12:09:09 | INFO     | Building results dataframe.
+2026-08-06 12:09:09 | INFO     | Results dataframe built successfully.
+2026-08-06 12:09:09 | INFO     | Identifying best model.
+2026-08-06 12:09:09 | INFO     | Best model identified: Support Vector Machine
+2026-08-06 12:09:09 | INFO     | Saving best model.
+2026-08-06 12:09:09 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 12:09:09 | INFO     | Saving scaler.
+2026-08-06 12:09:09 | INFO     | No scaler available to save.
+2026-08-06 12:09:09 | INFO     | Saving encoders.
+2026-08-06 12:09:09 | INFO     | No encoders available to save.
+2026-08-06 12:09:09 | INFO     | Saving metadata.
+2026-08-06 12:09:09 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 12:09:33 | INFO     | Predictor initialized.
+2026-08-06 12:09:33 | INFO     | Model loaded from models\best_model.pkl
+2026-08-06 12:09:33 | INFO     | Metadata loaded from models\metadata.json
+2026-08-06 12:09:33 | INFO     | Scaler loaded from models\scaler.pkl
+2026-08-06 12:09:33 | INFO     | Encoders loaded from models\encoders.pkl
+2026-08-06 12:14:19 | INFO     | Predictor initialized.
+2026-08-06 12:14:19 | INFO     | Model loaded from models\best_model.pkl
+2026-08-06 12:14:19 | INFO     | Metadata loaded from models\metadata.json
+2026-08-06 12:14:19 | INFO     | Scaler loaded from models\scaler.pkl
+2026-08-06 12:14:19 | INFO     | Encoders loaded from models\encoders.pkl
+2026-08-06 12:14:25 | INFO     | Predictor initialized.
+2026-08-06 12:14:25 | INFO     | Model loaded from models\best_model.pkl
+2026-08-06 12:14:25 | INFO     | Metadata loaded from models\metadata.json
+2026-08-06 12:14:25 | INFO     | Scaler loaded from models\scaler.pkl
+2026-08-06 12:14:25 | INFO     | Encoders loaded from models\encoders.pkl
+2026-08-06 12:15:07 | INFO     | DataCleaner initialized.
+2026-08-06 12:15:07 | INFO     | Handling missing values using 'mean' strategy.
+2026-08-06 12:15:07 | INFO     | Filled missing values in 'Age' using mean.
+2026-08-06 12:15:07 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 12:15:07 | INFO     | Filled missing values in 'Cabin' using mode.
+2026-08-06 12:15:07 | INFO     | Filled missing values in 'Embarked' using mode.
+2026-08-06 12:15:07 | INFO     | Removing duplicate rows.
+2026-08-06 12:15:07 | INFO     | Duplicate removal completed. Removed 0 duplicate row(s).
+2026-08-06 12:15:16 | INFO     | FeatureEngineer initialized.
+2026-08-06 12:15:16 | INFO     | Selecting 'Survived' as the target column.
+2026-08-06 12:15:16 | INFO     | Target column selected successfully.
+2026-08-06 12:15:16 | INFO     | Encoding categorical columns using 'label'.
+2026-08-06 12:15:16 | INFO     | Detecting high-cardinality columns with threshold=0.5
+2026-08-06 12:15:16 | INFO     | Removing high-cardinality columns: ['Name', 'Ticket', 'Cabin']
+2026-08-06 12:15:16 | INFO     | Label encoding completed successfully.
+2026-08-06 12:15:16 | INFO     | Splitting dataset with test_size=0.2
+2026-08-06 12:15:16 | INFO     | Train/Test split completed successfully.
+2026-08-06 12:15:16 | INFO     | Scaling features using 'standard'.
+2026-08-06 12:15:16 | INFO     | Feature scaling completed successfully.
+2026-08-06 12:15:25 | INFO     | Trainer initialized.
+2026-08-06 12:15:25 | INFO     | Detecting problem type.
+2026-08-06 12:15:25 | INFO     | Problem type detected: Classification
+2026-08-06 12:15:25 | INFO     | Building model registry.
+2026-08-06 12:15:25 | INFO     | 6 models added to the registry.
+2026-08-06 12:15:25 | INFO     | Training all models.
+2026-08-06 12:15:25 | INFO     | Training Logistic Regression...
+2026-08-06 12:15:25 | INFO     | Logistic Regression trained successfully.
+2026-08-06 12:15:25 | INFO     | Training Decision Tree...
+2026-08-06 12:15:25 | INFO     | Decision Tree trained successfully.
+2026-08-06 12:15:25 | INFO     | Training Random Forest...
+2026-08-06 12:15:25 | INFO     | Random Forest trained successfully.
+2026-08-06 12:15:25 | INFO     | Training K-Nearest Neighbors...
+2026-08-06 12:15:25 | INFO     | K-Nearest Neighbors trained successfully.
+2026-08-06 12:15:25 | INFO     | Training Support Vector Machine...
+2026-08-06 12:15:25 | INFO     | Support Vector Machine trained successfully.
+2026-08-06 12:15:25 | INFO     | Training Naive Bayes...
+2026-08-06 12:15:25 | INFO     | Naive Bayes trained successfully.
+2026-08-06 12:15:25 | INFO     | All models trained successfully.
+2026-08-06 12:15:25 | INFO     | Evaluating trained models.
+2026-08-06 12:15:25 | INFO     | Evaluating Logistic Regression...
+2026-08-06 12:15:25 | INFO     | Logistic Regression evaluated successfully.
+2026-08-06 12:15:25 | INFO     | Evaluating Decision Tree...
+2026-08-06 12:15:25 | INFO     | Decision Tree evaluated successfully.
+2026-08-06 12:15:25 | INFO     | Evaluating Random Forest...
+2026-08-06 12:15:25 | INFO     | Random Forest evaluated successfully.
+2026-08-06 12:15:25 | INFO     | Evaluating K-Nearest Neighbors...
+2026-08-06 12:15:25 | INFO     | K-Nearest Neighbors evaluated successfully.
+2026-08-06 12:15:25 | INFO     | Evaluating Support Vector Machine...
+2026-08-06 12:15:25 | INFO     | Support Vector Machine evaluated successfully.
+2026-08-06 12:15:25 | INFO     | Evaluating Naive Bayes...
+2026-08-06 12:15:25 | INFO     | Naive Bayes evaluated successfully.
+2026-08-06 12:15:25 | INFO     | All models evaluated successfully.
+2026-08-06 12:15:25 | INFO     | Building results dataframe.
+2026-08-06 12:15:25 | INFO     | Results dataframe built successfully.
+2026-08-06 12:15:25 | INFO     | Identifying best model.
+2026-08-06 12:15:25 | INFO     | Best model identified: Support Vector Machine
+2026-08-06 12:15:25 | INFO     | Saving best model.
+2026-08-06 12:15:25 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 12:15:25 | INFO     | Saving scaler.
+2026-08-06 12:15:25 | INFO     | No scaler available to save.
+2026-08-06 12:15:25 | INFO     | Saving encoders.
+2026-08-06 12:15:25 | INFO     | No encoders available to save.
+2026-08-06 12:15:25 | INFO     | Saving metadata.
+2026-08-06 12:15:25 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 12:15:41 | INFO     | Predictor initialized.
+2026-08-06 12:15:41 | INFO     | Model loaded from models\best_model.pkl
+2026-08-06 12:15:41 | INFO     | Metadata loaded from models\metadata.json
+2026-08-06 12:15:41 | INFO     | Scaler loaded from models\scaler.pkl
+2026-08-06 12:15:41 | INFO     | Encoders loaded from models\encoders.pkl
+2026-08-06 12:15:41 | INFO     | Prediction preprocessing completed.
+2026-08-06 12:15:41 | INFO     | Predictions generated successfully.
+2026-08-06 12:15:41 | INFO     | Predictions saved to predictions.csv
+2026-08-06 12:18:54 | INFO     | DataCleaner initialized.
+2026-08-06 12:18:54 | INFO     | Handling missing values using 'mean' strategy.
+2026-08-06 12:18:54 | INFO     | Filled missing values in 'Age' using mean.
+2026-08-06 12:18:54 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 12:18:54 | INFO     | Filled missing values in 'Cabin' using mode.
+2026-08-06 12:18:54 | INFO     | Filled missing values in 'Embarked' using mode.
+2026-08-06 12:18:54 | INFO     | Removing duplicate rows.
+2026-08-06 12:18:54 | INFO     | Duplicate removal completed. Removed 0 duplicate row(s).
+2026-08-06 12:19:02 | INFO     | FeatureEngineer initialized.
+2026-08-06 12:19:02 | INFO     | Selecting 'Survived' as the target column.
+2026-08-06 12:19:02 | INFO     | Target column selected successfully.
+2026-08-06 12:19:02 | INFO     | Encoding categorical columns using 'label'.
+2026-08-06 12:19:02 | INFO     | Detecting high-cardinality columns with threshold=0.5
+2026-08-06 12:19:03 | INFO     | Removing high-cardinality columns: ['Name', 'Ticket', 'Cabin']
+2026-08-06 12:19:03 | INFO     | Label encoding completed successfully.
+2026-08-06 12:19:03 | INFO     | Splitting dataset with test_size=0.2
+2026-08-06 12:19:03 | INFO     | Train/Test split completed successfully.
+2026-08-06 12:19:03 | INFO     | Scaling features using 'standard'.
+2026-08-06 12:19:03 | INFO     | Feature scaling completed successfully.
+2026-08-06 12:19:10 | INFO     | Trainer initialized.
+2026-08-06 12:19:10 | INFO     | Detecting problem type.
+2026-08-06 12:19:10 | INFO     | Problem type detected: Classification
+2026-08-06 12:19:10 | INFO     | Building model registry.
+2026-08-06 12:19:10 | INFO     | 6 models added to the registry.
+2026-08-06 12:19:10 | INFO     | Training all models.
+2026-08-06 12:19:10 | INFO     | Training Logistic Regression...
+2026-08-06 12:19:10 | INFO     | Logistic Regression trained successfully.
+2026-08-06 12:19:10 | INFO     | Training Decision Tree...
+2026-08-06 12:19:10 | INFO     | Decision Tree trained successfully.
+2026-08-06 12:19:10 | INFO     | Training Random Forest...
+2026-08-06 12:19:10 | INFO     | Random Forest trained successfully.
+2026-08-06 12:19:10 | INFO     | Training K-Nearest Neighbors...
+2026-08-06 12:19:10 | INFO     | K-Nearest Neighbors trained successfully.
+2026-08-06 12:19:10 | INFO     | Training Support Vector Machine...
+2026-08-06 12:19:10 | INFO     | Support Vector Machine trained successfully.
+2026-08-06 12:19:10 | INFO     | Training Naive Bayes...
+2026-08-06 12:19:10 | INFO     | Naive Bayes trained successfully.
+2026-08-06 12:19:10 | INFO     | All models trained successfully.
+2026-08-06 12:19:10 | INFO     | Evaluating trained models.
+2026-08-06 12:19:10 | INFO     | Evaluating Logistic Regression...
+2026-08-06 12:19:11 | INFO     | Logistic Regression evaluated successfully.
+2026-08-06 12:19:11 | INFO     | Evaluating Decision Tree...
+2026-08-06 12:19:11 | INFO     | Decision Tree evaluated successfully.
+2026-08-06 12:19:11 | INFO     | Evaluating Random Forest...
+2026-08-06 12:19:11 | INFO     | Random Forest evaluated successfully.
+2026-08-06 12:19:11 | INFO     | Evaluating K-Nearest Neighbors...
+2026-08-06 12:19:11 | INFO     | K-Nearest Neighbors evaluated successfully.
+2026-08-06 12:19:11 | INFO     | Evaluating Support Vector Machine...
+2026-08-06 12:19:11 | INFO     | Support Vector Machine evaluated successfully.
+2026-08-06 12:19:11 | INFO     | Evaluating Naive Bayes...
+2026-08-06 12:19:11 | INFO     | Naive Bayes evaluated successfully.
+2026-08-06 12:19:11 | INFO     | All models evaluated successfully.
+2026-08-06 12:19:11 | INFO     | Building results dataframe.
+2026-08-06 12:19:11 | INFO     | Results dataframe built successfully.
+2026-08-06 12:19:11 | INFO     | Identifying best model.
+2026-08-06 12:19:11 | INFO     | Best model identified: Support Vector Machine
+2026-08-06 12:19:11 | INFO     | Saving best model.
+2026-08-06 12:19:11 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 12:19:11 | INFO     | Saving scaler.
+2026-08-06 12:19:11 | INFO     | No scaler available to save.
+2026-08-06 12:19:11 | INFO     | Saving encoders.
+2026-08-06 12:19:11 | INFO     | No encoders available to save.
+2026-08-06 12:19:11 | INFO     | Saving metadata.
+2026-08-06 12:19:11 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 12:19:22 | INFO     | Predictor initialized.
+2026-08-06 12:19:22 | INFO     | Model loaded from models\best_model.pkl
+2026-08-06 12:19:22 | INFO     | Metadata loaded from models\metadata.json
+2026-08-06 12:19:22 | INFO     | Scaler loaded from models\scaler.pkl
+2026-08-06 12:19:22 | INFO     | Encoders loaded from models\encoders.pkl
+2026-08-06 12:19:22 | INFO     | Prediction preprocessing completed.
+2026-08-06 12:19:22 | INFO     | Predictions generated successfully.
+2026-08-06 12:19:22 | INFO     | Predictions saved to predictions.csv

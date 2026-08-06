@@ -231,12 +231,28 @@ class Predictor:
             df = df[
                 feature_names
             ]
-
+            
 
         
 
         if self.scaler is not None:
+            print("\nFEATURES FROM METADATA:")
+            print(feature_names)
 
+            print("\nDATAFRAME COLUMNS BEFORE SCALING:")
+            print(df.columns.tolist())
+
+            print("\nMISSING FEATURES:")
+            print(
+                     set(feature_names)
+                - set(df.columns.tolist())
+            )
+
+            print("\nEXTRA FEATURES:")
+            print(
+                set(df.columns.tolist())
+                - set(feature_names)
+            )
             df = pd.DataFrame(
                 self.scaler.transform(
                     df

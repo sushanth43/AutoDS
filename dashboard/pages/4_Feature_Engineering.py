@@ -147,6 +147,14 @@ else:
             "feature_engineer"
         ] = engineer
 
+        st.session_state[
+            "scaler"
+        ] = engineer.scaler
+
+        st.session_state[
+            "encoders"
+        ] = engineer.encoders
+
         st.success(
             "Feature Engineering Completed Successfully."
         )

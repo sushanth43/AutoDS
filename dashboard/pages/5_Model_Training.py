@@ -81,7 +81,11 @@ else:
         with st.spinner(
             "Training models..."
         ):
+            print("\nSCALER:")
+            print(scaler)
 
+            print("\nENCODERS:")
+            print(encoders)
             trainer = Trainer(
                 X_train,
                 X_test,

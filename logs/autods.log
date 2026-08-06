@@ -5060,3 +5060,399 @@ LinearRegression does not accept missing values encoded as NaN natively. For sup
 2026-08-06 12:22:00 | INFO     | Handling missing values using 'mean' strategy.
 2026-08-06 12:22:00 | INFO     | Filled missing values in 'Age' using mean.
 2026-08-06 12:22:00 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 12:22:00 | INFO     | Filled missing values in 'Cabin' using mode.
+2026-08-06 12:22:00 | INFO     | Filled missing values in 'Embarked' using mode.
+2026-08-06 12:22:00 | INFO     | Removing duplicate rows.
+2026-08-06 12:22:00 | INFO     | Duplicate removal completed. Removed 0 duplicate row(s).
+2026-08-06 12:22:05 | INFO     | FeatureEngineer initialized.
+2026-08-06 12:22:05 | INFO     | Selecting 'Survived' as the target column.
+2026-08-06 12:22:05 | INFO     | Target column selected successfully.
+2026-08-06 12:22:05 | INFO     | Encoding categorical columns using 'label'.
+2026-08-06 12:22:05 | INFO     | Detecting high-cardinality columns with threshold=0.5
+2026-08-06 12:22:05 | INFO     | Removing high-cardinality columns: ['Name', 'Ticket', 'Cabin']
+2026-08-06 12:22:05 | INFO     | Label encoding completed successfully.
+2026-08-06 12:22:05 | INFO     | Splitting dataset with test_size=0.2
+2026-08-06 12:22:06 | INFO     | Train/Test split completed successfully.
+2026-08-06 12:22:06 | INFO     | Scaling features using 'standard'.
+2026-08-06 12:22:06 | INFO     | Feature scaling completed successfully.
+2026-08-06 12:22:10 | INFO     | Trainer initialized.
+2026-08-06 12:22:10 | INFO     | Detecting problem type.
+2026-08-06 12:22:10 | INFO     | Problem type detected: Classification
+2026-08-06 12:22:10 | INFO     | Building model registry.
+2026-08-06 12:22:10 | INFO     | 6 models added to the registry.
+2026-08-06 12:22:10 | INFO     | Training all models.
+2026-08-06 12:22:10 | INFO     | Training Logistic Regression...
+2026-08-06 12:22:10 | INFO     | Logistic Regression trained successfully.
+2026-08-06 12:22:10 | INFO     | Training Decision Tree...
+2026-08-06 12:22:10 | INFO     | Decision Tree trained successfully.
+2026-08-06 12:22:10 | INFO     | Training Random Forest...
+2026-08-06 12:22:10 | INFO     | Random Forest trained successfully.
+2026-08-06 12:22:10 | INFO     | Training K-Nearest Neighbors...
+2026-08-06 12:22:10 | INFO     | K-Nearest Neighbors trained successfully.
+2026-08-06 12:22:10 | INFO     | Training Support Vector Machine...
+2026-08-06 12:22:10 | INFO     | Support Vector Machine trained successfully.
+2026-08-06 12:22:10 | INFO     | Training Naive Bayes...
+2026-08-06 12:22:10 | INFO     | Naive Bayes trained successfully.
+2026-08-06 12:22:10 | INFO     | All models trained successfully.
+2026-08-06 12:22:10 | INFO     | Evaluating trained models.
+2026-08-06 12:22:10 | INFO     | Evaluating Logistic Regression...
+2026-08-06 12:22:10 | INFO     | Logistic Regression evaluated successfully.
+2026-08-06 12:22:10 | INFO     | Evaluating Decision Tree...
+2026-08-06 12:22:10 | INFO     | Decision Tree evaluated successfully.
+2026-08-06 12:22:10 | INFO     | Evaluating Random Forest...
+2026-08-06 12:22:10 | INFO     | Random Forest evaluated successfully.
+2026-08-06 12:22:10 | INFO     | Evaluating K-Nearest Neighbors...
+2026-08-06 12:22:10 | INFO     | K-Nearest Neighbors evaluated successfully.
+2026-08-06 12:22:10 | INFO     | Evaluating Support Vector Machine...
+2026-08-06 12:22:10 | INFO     | Support Vector Machine evaluated successfully.
+2026-08-06 12:22:10 | INFO     | Evaluating Naive Bayes...
+2026-08-06 12:22:10 | INFO     | Naive Bayes evaluated successfully.
+2026-08-06 12:22:10 | INFO     | All models evaluated successfully.
+2026-08-06 12:22:10 | INFO     | Building results dataframe.
+2026-08-06 12:22:10 | INFO     | Results dataframe built successfully.
+2026-08-06 12:22:10 | INFO     | Identifying best model.
+2026-08-06 12:22:10 | INFO     | Best model identified: Support Vector Machine
+2026-08-06 12:22:10 | INFO     | Saving best model.
+2026-08-06 12:22:10 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 12:22:10 | INFO     | Saving scaler.
+2026-08-06 12:22:10 | INFO     | No scaler available to save.
+2026-08-06 12:22:10 | INFO     | Saving encoders.
+2026-08-06 12:22:10 | INFO     | No encoders available to save.
+2026-08-06 12:22:10 | INFO     | Saving metadata.
+2026-08-06 12:22:10 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 12:22:21 | INFO     | Predictor initialized.
+2026-08-06 12:22:21 | INFO     | Model loaded from models\best_model.pkl
+2026-08-06 12:22:21 | INFO     | Metadata loaded from models\metadata.json
+2026-08-06 12:22:21 | INFO     | Scaler loaded from models\scaler.pkl
+2026-08-06 12:22:21 | INFO     | Encoders loaded from models\encoders.pkl
+2026-08-06 12:22:21 | INFO     | Prediction preprocessing completed.
+2026-08-06 12:22:21 | INFO     | Predictions generated successfully.
+2026-08-06 12:22:21 | INFO     | Predictions saved to predictions.csv
+2026-08-06 16:19:27 | INFO     | DataCleaner initialized.
+2026-08-06 16:19:27 | INFO     | Handling missing values using 'mean' strategy.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'LotFrontage' using mean.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'MasVnrArea' using mean.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'GarageYrBlt' using mean.
+2026-08-06 16:19:27 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'Alley' using mode.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'MasVnrType' using mode.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'BsmtQual' using mode.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'BsmtCond' using mode.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'BsmtExposure' using mode.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'BsmtFinType1' using mode.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'BsmtFinType2' using mode.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'Electrical' using mode.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'FireplaceQu' using mode.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'GarageType' using mode.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'GarageFinish' using mode.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'GarageQual' using mode.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'GarageCond' using mode.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'PoolQC' using mode.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'Fence' using mode.
+2026-08-06 16:19:27 | INFO     | Filled missing values in 'MiscFeature' using mode.
+2026-08-06 16:19:27 | INFO     | Removing duplicate rows.
+2026-08-06 16:19:27 | INFO     | Duplicate removal completed. Removed 0 duplicate row(s).
+2026-08-06 16:19:45 | INFO     | FeatureEngineer initialized.
+2026-08-06 16:19:45 | INFO     | Selecting 'SalePrice' as the target column.
+2026-08-06 16:19:45 | INFO     | Target column selected successfully.
+2026-08-06 16:19:45 | INFO     | Encoding categorical columns using 'label'.
+2026-08-06 16:19:45 | INFO     | Detecting high-cardinality columns with threshold=0.5
+2026-08-06 16:19:45 | INFO     | No high-cardinality columns found.
+2026-08-06 16:19:46 | INFO     | Label encoding completed successfully.
+2026-08-06 16:19:46 | INFO     | Splitting dataset with test_size=0.2
+2026-08-06 16:19:46 | INFO     | Train/Test split completed successfully.
+2026-08-06 16:19:46 | INFO     | Scaling features using 'standard'.
+2026-08-06 16:19:46 | INFO     | Feature scaling completed successfully.
+2026-08-06 16:19:56 | INFO     | Trainer initialized.
+2026-08-06 16:19:56 | INFO     | Detecting problem type.
+2026-08-06 16:19:56 | INFO     | Problem type detected: Regression
+2026-08-06 16:19:56 | INFO     | Building model registry.
+2026-08-06 16:19:56 | INFO     | 5 models added to the registry.
+2026-08-06 16:19:56 | INFO     | Training all models.
+2026-08-06 16:19:56 | INFO     | Training Linear Regression...
+2026-08-06 16:19:56 | INFO     | Linear Regression trained successfully.
+2026-08-06 16:19:56 | INFO     | Training Decision Tree Regressor...
+2026-08-06 16:19:56 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 16:19:56 | INFO     | Training Random Forest Regressor...
+2026-08-06 16:19:58 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 16:19:58 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 16:20:02 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 16:20:02 | INFO     | Training Support Vector Regressor...
+2026-08-06 16:20:02 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 16:20:02 | INFO     | All models trained successfully.
+2026-08-06 16:20:02 | INFO     | Evaluating trained models.
+2026-08-06 16:20:02 | INFO     | Evaluating Linear Regression...
+2026-08-06 16:20:02 | INFO     | Linear Regression evaluated successfully.
+2026-08-06 16:20:02 | INFO     | Evaluating Decision Tree Regressor...
+2026-08-06 16:20:02 | INFO     | Decision Tree Regressor evaluated successfully.
+2026-08-06 16:20:02 | INFO     | Evaluating Random Forest Regressor...
+2026-08-06 16:20:02 | INFO     | Random Forest Regressor evaluated successfully.
+2026-08-06 16:20:02 | INFO     | Evaluating K-Nearest Neighbors Regressor...
+2026-08-06 16:20:02 | INFO     | K-Nearest Neighbors Regressor evaluated successfully.
+2026-08-06 16:20:02 | INFO     | Evaluating Support Vector Regressor...
+2026-08-06 16:20:02 | INFO     | Support Vector Regressor evaluated successfully.
+2026-08-06 16:20:02 | INFO     | All models evaluated successfully.
+2026-08-06 16:20:02 | INFO     | Building results dataframe.
+2026-08-06 16:20:02 | INFO     | Results dataframe built successfully.
+2026-08-06 16:20:02 | INFO     | Identifying best model.
+2026-08-06 16:20:02 | INFO     | Best model identified: Random Forest Regressor
+2026-08-06 16:20:02 | INFO     | Saving best model.
+2026-08-06 16:20:02 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 16:20:02 | INFO     | Saving scaler.
+2026-08-06 16:20:02 | INFO     | No scaler available to save.
+2026-08-06 16:20:02 | INFO     | Saving encoders.
+2026-08-06 16:20:02 | INFO     | No encoders available to save.
+2026-08-06 16:20:02 | INFO     | Saving metadata.
+2026-08-06 16:20:02 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 16:20:17 | INFO     | Predictor initialized.
+2026-08-06 16:20:17 | INFO     | Model loaded from models\best_model.pkl
+2026-08-06 16:20:17 | INFO     | Metadata loaded from models\metadata.json
+2026-08-06 16:20:17 | INFO     | Scaler loaded from models\scaler.pkl
+2026-08-06 16:20:17 | INFO     | Encoders loaded from models\encoders.pkl
+2026-08-06 16:27:08 | INFO     | Predictor initialized.
+2026-08-06 16:27:08 | INFO     | Model loaded from models\best_model.pkl
+2026-08-06 16:27:08 | INFO     | Metadata loaded from models\metadata.json
+2026-08-06 16:27:08 | INFO     | Scaler loaded from models\scaler.pkl
+2026-08-06 16:27:08 | INFO     | Encoders loaded from models\encoders.pkl
+2026-08-06 16:30:53 | INFO     | DataCleaner initialized.
+2026-08-06 16:30:53 | INFO     | Handling missing values using 'mean' strategy.
+2026-08-06 16:30:53 | INFO     | Filled missing values in 'Age' using mean.
+2026-08-06 16:30:53 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 16:30:53 | INFO     | Filled missing values in 'Cabin' using mode.
+2026-08-06 16:30:53 | INFO     | Filled missing values in 'Embarked' using mode.
+2026-08-06 16:30:53 | INFO     | Removing duplicate rows.
+2026-08-06 16:30:53 | INFO     | Duplicate removal completed. Removed 0 duplicate row(s).
+2026-08-06 16:31:00 | INFO     | FeatureEngineer initialized.
+2026-08-06 16:31:00 | INFO     | Selecting 'Survived' as the target column.
+2026-08-06 16:31:00 | INFO     | Target column selected successfully.
+2026-08-06 16:31:00 | INFO     | Encoding categorical columns using 'label'.
+2026-08-06 16:31:00 | INFO     | Detecting high-cardinality columns with threshold=0.5
+2026-08-06 16:31:00 | INFO     | Removing high-cardinality columns: ['Name', 'Ticket', 'Cabin']
+2026-08-06 16:31:00 | INFO     | Label encoding completed successfully.
+2026-08-06 16:31:00 | INFO     | Splitting dataset with test_size=0.2
+2026-08-06 16:31:00 | INFO     | Train/Test split completed successfully.
+2026-08-06 16:31:00 | INFO     | Scaling features using 'standard'.
+2026-08-06 16:31:00 | INFO     | Feature scaling completed successfully.
+2026-08-06 16:31:07 | INFO     | Trainer initialized.
+2026-08-06 16:31:07 | INFO     | Detecting problem type.
+2026-08-06 16:31:07 | INFO     | Problem type detected: Classification
+2026-08-06 16:31:07 | INFO     | Building model registry.
+2026-08-06 16:31:07 | INFO     | 6 models added to the registry.
+2026-08-06 16:31:07 | INFO     | Training all models.
+2026-08-06 16:31:07 | INFO     | Training Logistic Regression...
+2026-08-06 16:31:07 | INFO     | Logistic Regression trained successfully.
+2026-08-06 16:31:07 | INFO     | Training Decision Tree...
+2026-08-06 16:31:07 | INFO     | Decision Tree trained successfully.
+2026-08-06 16:31:07 | INFO     | Training Random Forest...
+2026-08-06 16:31:08 | INFO     | Random Forest trained successfully.
+2026-08-06 16:31:08 | INFO     | Training K-Nearest Neighbors...
+2026-08-06 16:31:08 | INFO     | K-Nearest Neighbors trained successfully.
+2026-08-06 16:31:08 | INFO     | Training Support Vector Machine...
+2026-08-06 16:31:08 | INFO     | Support Vector Machine trained successfully.
+2026-08-06 16:31:08 | INFO     | Training Naive Bayes...
+2026-08-06 16:31:08 | INFO     | Naive Bayes trained successfully.
+2026-08-06 16:31:08 | INFO     | All models trained successfully.
+2026-08-06 16:31:08 | INFO     | Evaluating trained models.
+2026-08-06 16:31:08 | INFO     | Evaluating Logistic Regression...
+2026-08-06 16:31:08 | INFO     | Logistic Regression evaluated successfully.
+2026-08-06 16:31:08 | INFO     | Evaluating Decision Tree...
+2026-08-06 16:31:08 | INFO     | Decision Tree evaluated successfully.
+2026-08-06 16:31:08 | INFO     | Evaluating Random Forest...
+2026-08-06 16:31:08 | INFO     | Random Forest evaluated successfully.
+2026-08-06 16:31:08 | INFO     | Evaluating K-Nearest Neighbors...
+2026-08-06 16:31:08 | INFO     | K-Nearest Neighbors evaluated successfully.
+2026-08-06 16:31:08 | INFO     | Evaluating Support Vector Machine...
+2026-08-06 16:31:08 | INFO     | Support Vector Machine evaluated successfully.
+2026-08-06 16:31:08 | INFO     | Evaluating Naive Bayes...
+2026-08-06 16:31:08 | INFO     | Naive Bayes evaluated successfully.
+2026-08-06 16:31:08 | INFO     | All models evaluated successfully.
+2026-08-06 16:31:08 | INFO     | Building results dataframe.
+2026-08-06 16:31:08 | INFO     | Results dataframe built successfully.
+2026-08-06 16:31:08 | INFO     | Identifying best model.
+2026-08-06 16:31:08 | INFO     | Best model identified: Support Vector Machine
+2026-08-06 16:31:08 | INFO     | Saving best model.
+2026-08-06 16:31:08 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 16:31:08 | INFO     | Saving scaler.
+2026-08-06 16:31:08 | INFO     | No scaler available to save.
+2026-08-06 16:31:08 | INFO     | Saving encoders.
+2026-08-06 16:31:08 | INFO     | No encoders available to save.
+2026-08-06 16:31:08 | INFO     | Saving metadata.
+2026-08-06 16:31:08 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 16:32:08 | INFO     | DataCleaner initialized.
+2026-08-06 16:32:08 | INFO     | Handling missing values using 'mean' strategy.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'LotFrontage' using mean.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'MasVnrArea' using mean.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'GarageYrBlt' using mean.
+2026-08-06 16:32:08 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'Alley' using mode.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'MasVnrType' using mode.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'BsmtQual' using mode.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'BsmtCond' using mode.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'BsmtExposure' using mode.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'BsmtFinType1' using mode.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'BsmtFinType2' using mode.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'Electrical' using mode.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'FireplaceQu' using mode.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'GarageType' using mode.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'GarageFinish' using mode.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'GarageQual' using mode.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'GarageCond' using mode.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'PoolQC' using mode.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'Fence' using mode.
+2026-08-06 16:32:08 | INFO     | Filled missing values in 'MiscFeature' using mode.
+2026-08-06 16:32:08 | INFO     | Removing duplicate rows.
+2026-08-06 16:32:08 | INFO     | Duplicate removal completed. Removed 0 duplicate row(s).
+2026-08-06 16:32:16 | INFO     | FeatureEngineer initialized.
+2026-08-06 16:32:16 | INFO     | Selecting 'SalePrice' as the target column.
+2026-08-06 16:32:16 | INFO     | Target column selected successfully.
+2026-08-06 16:32:16 | INFO     | Encoding categorical columns using 'label'.
+2026-08-06 16:32:16 | INFO     | Detecting high-cardinality columns with threshold=0.5
+2026-08-06 16:32:16 | INFO     | No high-cardinality columns found.
+2026-08-06 16:32:16 | INFO     | Label encoding completed successfully.
+2026-08-06 16:32:16 | INFO     | Splitting dataset with test_size=0.2
+2026-08-06 16:32:16 | INFO     | Train/Test split completed successfully.
+2026-08-06 16:32:16 | INFO     | Scaling features using 'standard'.
+2026-08-06 16:32:16 | INFO     | Feature scaling completed successfully.
+2026-08-06 16:32:20 | INFO     | Trainer initialized.
+2026-08-06 16:32:20 | INFO     | Detecting problem type.
+2026-08-06 16:32:20 | INFO     | Problem type detected: Regression
+2026-08-06 16:32:20 | INFO     | Building model registry.
+2026-08-06 16:32:20 | INFO     | 5 models added to the registry.
+2026-08-06 16:32:20 | INFO     | Training all models.
+2026-08-06 16:32:20 | INFO     | Training Linear Regression...
+2026-08-06 16:32:20 | INFO     | Linear Regression trained successfully.
+2026-08-06 16:32:20 | INFO     | Training Decision Tree Regressor...
+2026-08-06 16:32:20 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 16:32:20 | INFO     | Training Random Forest Regressor...
+2026-08-06 16:32:22 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 16:32:22 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 16:32:24 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 16:32:24 | INFO     | Training Support Vector Regressor...
+2026-08-06 16:32:24 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 16:32:24 | INFO     | All models trained successfully.
+2026-08-06 16:32:24 | INFO     | Evaluating trained models.
+2026-08-06 16:32:24 | INFO     | Evaluating Linear Regression...
+2026-08-06 16:32:24 | INFO     | Linear Regression evaluated successfully.
+2026-08-06 16:32:24 | INFO     | Evaluating Decision Tree Regressor...
+2026-08-06 16:32:24 | INFO     | Decision Tree Regressor evaluated successfully.
+2026-08-06 16:32:24 | INFO     | Evaluating Random Forest Regressor...
+2026-08-06 16:32:24 | INFO     | Random Forest Regressor evaluated successfully.
+2026-08-06 16:32:24 | INFO     | Evaluating K-Nearest Neighbors Regressor...
+2026-08-06 16:32:24 | INFO     | K-Nearest Neighbors Regressor evaluated successfully.
+2026-08-06 16:32:24 | INFO     | Evaluating Support Vector Regressor...
+2026-08-06 16:32:24 | INFO     | Support Vector Regressor evaluated successfully.
+2026-08-06 16:32:24 | INFO     | All models evaluated successfully.
+2026-08-06 16:32:24 | INFO     | Building results dataframe.
+2026-08-06 16:32:24 | INFO     | Results dataframe built successfully.
+2026-08-06 16:32:24 | INFO     | Identifying best model.
+2026-08-06 16:32:24 | INFO     | Best model identified: Random Forest Regressor
+2026-08-06 16:32:24 | INFO     | Saving best model.
+2026-08-06 16:32:25 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 16:32:25 | INFO     | Saving scaler.
+2026-08-06 16:32:25 | INFO     | No scaler available to save.
+2026-08-06 16:32:25 | INFO     | Saving encoders.
+2026-08-06 16:32:25 | INFO     | No encoders available to save.
+2026-08-06 16:32:25 | INFO     | Saving metadata.
+2026-08-06 16:32:25 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 16:32:32 | INFO     | Predictor initialized.
+2026-08-06 16:32:32 | INFO     | Model loaded from models\best_model.pkl
+2026-08-06 16:32:32 | INFO     | Metadata loaded from models\metadata.json
+2026-08-06 18:20:27 | INFO     | DataCleaner initialized.
+2026-08-06 18:20:27 | INFO     | Handling missing values using 'mean' strategy.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'LotFrontage' using mean.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'MasVnrArea' using mean.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'GarageYrBlt' using mean.
+2026-08-06 18:20:27 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'Alley' using mode.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'MasVnrType' using mode.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'BsmtQual' using mode.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'BsmtCond' using mode.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'BsmtExposure' using mode.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'BsmtFinType1' using mode.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'BsmtFinType2' using mode.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'Electrical' using mode.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'FireplaceQu' using mode.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'GarageType' using mode.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'GarageFinish' using mode.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'GarageQual' using mode.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'GarageCond' using mode.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'PoolQC' using mode.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'Fence' using mode.
+2026-08-06 18:20:27 | INFO     | Filled missing values in 'MiscFeature' using mode.
+2026-08-06 18:20:27 | INFO     | Removing duplicate rows.
+2026-08-06 18:20:28 | INFO     | Duplicate removal completed. Removed 0 duplicate row(s).
+2026-08-06 18:20:34 | INFO     | FeatureEngineer initialized.
+2026-08-06 18:20:34 | INFO     | Selecting 'SalePrice' as the target column.
+2026-08-06 18:20:34 | INFO     | Target column selected successfully.
+2026-08-06 18:20:34 | INFO     | Encoding categorical columns using 'label'.
+2026-08-06 18:20:34 | INFO     | Detecting high-cardinality columns with threshold=0.5
+2026-08-06 18:20:34 | INFO     | No high-cardinality columns found.
+2026-08-06 18:20:34 | INFO     | Label encoding completed successfully.
+2026-08-06 18:20:34 | INFO     | Splitting dataset with test_size=0.2
+2026-08-06 18:20:34 | INFO     | Train/Test split completed successfully.
+2026-08-06 18:20:34 | INFO     | Scaling features using 'standard'.
+2026-08-06 18:20:34 | INFO     | Feature scaling completed successfully.
+2026-08-06 18:20:39 | INFO     | Trainer initialized.
+2026-08-06 18:20:39 | INFO     | Detecting problem type.
+2026-08-06 18:20:39 | INFO     | Problem type detected: Regression
+2026-08-06 18:20:39 | INFO     | Building model registry.
+2026-08-06 18:20:39 | INFO     | 5 models added to the registry.
+2026-08-06 18:20:39 | INFO     | Training all models.
+2026-08-06 18:20:39 | INFO     | Training Linear Regression...
+2026-08-06 18:20:39 | INFO     | Linear Regression trained successfully.
+2026-08-06 18:20:39 | INFO     | Training Decision Tree Regressor...
+2026-08-06 18:20:39 | INFO     | Decision Tree Regressor trained successfully.
+2026-08-06 18:20:39 | INFO     | Training Random Forest Regressor...
+2026-08-06 18:20:42 | INFO     | Random Forest Regressor trained successfully.
+2026-08-06 18:20:42 | INFO     | Training K-Nearest Neighbors Regressor...
+2026-08-06 18:20:42 | INFO     | K-Nearest Neighbors Regressor trained successfully.
+2026-08-06 18:20:42 | INFO     | Training Support Vector Regressor...
+2026-08-06 18:20:43 | INFO     | Support Vector Regressor trained successfully.
+2026-08-06 18:20:43 | INFO     | All models trained successfully.
+2026-08-06 18:20:43 | INFO     | Evaluating trained models.
+2026-08-06 18:20:43 | INFO     | Evaluating Linear Regression...
+2026-08-06 18:20:43 | INFO     | Linear Regression evaluated successfully.
+2026-08-06 18:20:43 | INFO     | Evaluating Decision Tree Regressor...
+2026-08-06 18:20:43 | INFO     | Decision Tree Regressor evaluated successfully.
+2026-08-06 18:20:43 | INFO     | Evaluating Random Forest Regressor...
+2026-08-06 18:20:43 | INFO     | Random Forest Regressor evaluated successfully.
+2026-08-06 18:20:43 | INFO     | Evaluating K-Nearest Neighbors Regressor...
+2026-08-06 18:20:43 | INFO     | K-Nearest Neighbors Regressor evaluated successfully.
+2026-08-06 18:20:43 | INFO     | Evaluating Support Vector Regressor...
+2026-08-06 18:20:43 | INFO     | Support Vector Regressor evaluated successfully.
+2026-08-06 18:20:43 | INFO     | All models evaluated successfully.
+2026-08-06 18:20:43 | INFO     | Building results dataframe.
+2026-08-06 18:20:43 | INFO     | Results dataframe built successfully.
+2026-08-06 18:20:43 | INFO     | Identifying best model.
+2026-08-06 18:20:43 | INFO     | Best model identified: Random Forest Regressor
+2026-08-06 18:20:43 | INFO     | Saving best model.
+2026-08-06 18:20:43 | INFO     | Best model saved to models\best_model.pkl
+2026-08-06 18:20:43 | INFO     | Saving scaler.
+2026-08-06 18:20:43 | INFO     | No scaler available to save.
+2026-08-06 18:20:43 | INFO     | Saving encoders.
+2026-08-06 18:20:43 | INFO     | No encoders available to save.
+2026-08-06 18:20:43 | INFO     | Saving metadata.
+2026-08-06 18:20:43 | INFO     | Metadata saved to models\metadata.json
+2026-08-06 18:27:07 | INFO     | DataCleaner initialized.
+2026-08-06 18:27:07 | INFO     | Handling missing values using 'mean' strategy.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'LotFrontage' using mean.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'MasVnrArea' using mean.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'GarageYrBlt' using mean.
+2026-08-06 18:27:07 | INFO     | Handling missing values using 'mode' strategy.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'Alley' using mode.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'MasVnrType' using mode.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'BsmtQual' using mode.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'BsmtCond' using mode.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'BsmtExposure' using mode.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'BsmtFinType1' using mode.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'BsmtFinType2' using mode.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'Electrical' using mode.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'FireplaceQu' using mode.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'GarageType' using mode.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'GarageFinish' using mode.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'GarageQual' using mode.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'GarageCond' using mode.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'PoolQC' using mode.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'Fence' using mode.
+2026-08-06 18:27:07 | INFO     | Filled missing values in 'MiscFeature' using mode.
+2026-08-06 18:27:07 | INFO     | Removing duplicate rows.

@@ -1323,3 +1323,1189 @@ src/
 - AutoDS now has a reusable data loading system.
 - The project architecture became more modular.
 - Future phases will build directly on the DataLoader.
+
+---
+
+# Phase 4 – Data Validation
+
+### Status
+
+✅ Completed
+
+---
+
+# Phase Objectives
+
+The objective of this phase was to ensure that every dataset entering AutoDS is validated before any further processing takes place.
+
+By the end of this phase, AutoDS can:
+
+- Validate whether a dataset is empty.
+- Detect missing values.
+- Detect duplicate rows.
+- Identify the data type of every column.
+- Generate a validation summary.
+- Prevent invalid datasets from moving further into the pipeline.
+
+---
+
+# Step 4.1 – Introduction to Data Validation
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- What Data Validation is.
+- Why validation is essential in Machine Learning pipelines.
+- The consequences of using poor-quality data.
+- How AutoDS performs dataset validation.
+
+---
+
+## What is Data Validation?
+
+Data Validation is the process of checking whether a dataset satisfies a set of predefined quality rules before it is processed further.
+
+Instead of immediately cleaning or analyzing data, we first verify that the dataset is suitable for processing.
+
+Validation acts as the first quality checkpoint in a Machine Learning pipeline.
+
+---
+
+## Why is Data Validation Important?
+
+Machine Learning models are only as good as the data used to train them.
+
+If poor-quality data enters the pipeline, it can lead to:
+
+- Incorrect analysis
+- Poor model performance
+- Runtime errors
+- Misleading visualizations
+- Incorrect business decisions
+
+By validating data early, these problems can be detected before they affect later stages of the project.
+
+---
+
+## Validation vs Data Cleaning
+
+Although they are closely related, Data Validation and Data Cleaning are different processes.
+
+### Data Validation
+
+Validation answers the question:
+
+> "What is wrong with the dataset?"
+
+Examples include:
+
+- Missing values
+- Duplicate rows
+- Incorrect data types
+- Empty datasets
+
+Validation only identifies these issues.
+
+---
+
+### Data Cleaning
+
+Cleaning answers the question:
+
+> "How do we fix the problems?"
+
+Examples include:
+
+- Filling missing values
+- Removing duplicates
+- Correcting data types
+- Handling outliers
+
+Cleaning modifies the dataset, whereas validation only reports problems.
+
+---
+
+## AutoDS Validation Workflow
+
+The validation process follows this sequence:
+
+Dataset
+
+↓
+
+Check if dataset is empty
+
+↓
+
+Detect missing values
+
+↓
+
+Detect duplicate rows
+
+↓
+
+Analyze data types
+
+↓
+
+Generate validation report
+
+↓
+
+Pass dataset to the next phase
+
+---
+
+## Key Takeaways
+
+- Data Validation is the first quality assurance step in the pipeline.
+- Validation identifies problems but does not modify the dataset.
+- Cleaning is performed only after validation is complete.
+
+---
+
+# Step 4.2 – Empty Dataset Validation
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- Why empty datasets must be detected.
+- How AutoDS validates dataset size.
+- Why processing an empty dataset is meaningless.
+
+---
+
+## Why Check for Empty Datasets?
+
+An empty dataset contains no records.
+
+Example:
+
+| Name | Age |
+|------|-----|
+| *(No Rows)* | |
+
+There is no information available for analysis or model training.
+
+Continuing the pipeline with an empty dataset would cause unnecessary errors in later stages.
+
+---
+
+## AutoDS Implementation
+
+The DataValidator first checks:
+
+- Number of rows
+- Number of columns
+
+If the dataset contains zero rows, validation immediately reports the issue.
+
+---
+
+## Why Perform This Check First?
+
+Checking whether a dataset is empty is extremely fast.
+
+There is no reason to perform more expensive validation operations on a dataset that contains no data.
+
+Therefore, this validation is always performed first.
+
+---
+
+## Key Takeaways
+
+- Empty datasets cannot be analyzed.
+- Detecting empty datasets early prevents unnecessary processing.
+- Simple validation checks should be performed before complex ones.
+
+---
+
+# Step 4.3 – Missing Value Detection
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- What missing values are.
+- Why missing values occur.
+- How AutoDS detects missing values.
+
+---
+
+## What are Missing Values?
+
+Missing values represent information that is unavailable for a particular observation.
+
+In Pandas, missing values are usually represented as:
+
+- NaN
+- None
+
+Example:
+
+| Name | Salary |
+|------|--------|
+| John | 50000 |
+| Alice | NaN |
+| Bob | 42000 |
+
+---
+
+## Why Missing Values Occur
+
+Common reasons include:
+
+- Human error
+- Failed data collection
+- Sensor failures
+- Database inconsistencies
+- Incomplete surveys
+
+---
+
+## Why are Missing Values Dangerous?
+
+Many Machine Learning algorithms cannot process missing values directly.
+
+Missing values may also distort:
+
+- Statistical summaries
+- Correlation analysis
+- Model training
+
+Therefore, they must be detected before cleaning begins.
+
+---
+
+## AutoDS Implementation
+
+The validator checks every column and counts:
+
+- Number of missing values
+- Percentage of missing values
+
+The information is stored for reporting purposes.
+
+The dataset is **not modified** during validation.
+
+---
+
+## Key Takeaways
+
+- Missing values are common in real-world datasets.
+- Validation detects missing values without fixing them.
+- Cleaning will be performed in a later phase.
+
+---
+
+# Step 4.4 – Duplicate Row Detection
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- What duplicate rows are.
+- Why duplicates are harmful.
+- How AutoDS detects duplicates.
+
+---
+
+## What are Duplicate Rows?
+
+Duplicate rows are records that appear more than once in a dataset.
+
+Example:
+
+| Name | Age |
+|------|-----|
+| John | 25 |
+| John | 25 |
+
+The second row contains no new information.
+
+---
+
+## Why are Duplicates Harmful?
+
+Duplicate records may:
+
+- Bias Machine Learning models
+- Distort statistical analysis
+- Increase dataset size unnecessarily
+- Produce misleading visualizations
+
+---
+
+## AutoDS Implementation
+
+The validator identifies:
+
+- Total duplicate rows
+- Whether duplicates exist
+
+The duplicates are only reported.
+
+Removal is performed during the Data Cleaning phase.
+
+---
+
+## Key Takeaways
+
+- Duplicate rows reduce data quality.
+- Validation reports duplicates without deleting them.
+- Data Cleaning is responsible for duplicate removal.
+
+---
+
+# Step 4.5 – Data Type Analysis
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- Why column data types matter.
+- Common Pandas data types.
+- How AutoDS analyzes dataset structure.
+
+---
+
+## Why Analyze Data Types?
+
+Every column stores a specific type of information.
+
+Examples include:
+
+- Numbers
+- Text
+- Dates
+- Boolean values
+
+Understanding data types helps determine how each feature should be processed later in the pipeline.
+
+---
+
+## Common Pandas Data Types
+
+- int64
+- float64
+- object
+- bool
+- datetime64
+
+Each data type requires different preprocessing techniques.
+
+---
+
+## AutoDS Implementation
+
+The validator records the data type of every column.
+
+This information becomes useful during:
+
+- Data Cleaning
+- Feature Engineering
+- Exploratory Data Analysis
+
+---
+
+## Why is This Important?
+
+A numerical column stored as text cannot be used correctly by Machine Learning algorithms.
+
+Detecting incorrect data types early simplifies later preprocessing.
+
+---
+
+## Key Takeaways
+
+- Every feature has an associated data type.
+- Data types determine how features are processed.
+- Validation records data types for future phases.
+
+---
+
+# Step 4.6 – Validation Report Generation
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- Why validation reports are useful.
+- What information AutoDS includes in its validation report.
+- How reporting improves software usability.
+
+---
+
+## Why Generate a Validation Report?
+
+Instead of printing individual validation results to the console, AutoDS combines all validation findings into a structured report.
+
+This provides users with a complete overview of dataset quality before preprocessing begins.
+
+---
+
+## Validation Report Contents
+
+The report currently includes:
+
+- Dataset Shape
+- Empty Dataset Check
+- Missing Value Summary
+- Duplicate Row Count
+- Column Data Types
+
+Future versions may also include:
+
+- Invalid Categories
+- Range Validation
+- Date Validation
+- Constraint Validation
+
+---
+
+## Advantages of Validation Reports
+
+- Centralized information
+- Easier debugging
+- Better user experience
+- Improved maintainability
+- Professional reporting
+
+---
+
+## Files Created During Phase 4
+
+```
+src/
+│
+├── validation/
+│   ├── __init__.py
+│   └── validator.py
+```
+
+---
+
+# Best Practices Learned
+
+- Always validate data before processing.
+- Separate validation from cleaning.
+- Perform inexpensive checks first.
+- Keep validation logic modular.
+- Generate structured reports instead of scattered console output.
+- Never modify datasets during validation.
+
+---
+
+# Key Takeaways
+
+- Data Validation ensures that only high-quality datasets proceed through the pipeline.
+- AutoDS now performs automated dataset validation before EDA.
+- The validation module follows the Single Responsibility Principle.
+- The output of this phase becomes the input for Exploratory Data Analysis.
+
+---
+
+---
+
+# Phase 5 – Exploratory Data Analysis (EDA)
+
+### Status
+
+✅ Completed
+
+---
+
+# Phase Objectives
+
+The objective of this phase was to understand the dataset by performing Exploratory Data Analysis (EDA) before any preprocessing or model training begins.
+
+By the end of this phase, AutoDS can:
+
+- Generate statistical summaries.
+- Analyze numerical features.
+- Analyze categorical features.
+- Compute feature correlations.
+- Generate histogram visualizations.
+- Detect outliers using the IQR method.
+- Generate a complete EDA report.
+
+---
+
+# Step 5.1 – Introduction to Exploratory Data Analysis (EDA)
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- What Exploratory Data Analysis (EDA) is.
+- Why EDA is important in Machine Learning.
+- How EDA helps understand a dataset.
+- How AutoDS performs automated EDA.
+
+---
+
+## What is Exploratory Data Analysis?
+
+Exploratory Data Analysis (EDA) is the process of examining a dataset to understand its characteristics before building Machine Learning models.
+
+Instead of immediately training a model, we first explore the data to identify patterns, relationships, anomalies, and potential issues.
+
+EDA helps transform raw data into meaningful information.
+
+---
+
+## Why is EDA Important?
+
+Understanding the dataset before model training helps answer questions such as:
+
+- How many features exist?
+- Which features are numerical?
+- Which features are categorical?
+- Are there missing values?
+- Are there strong relationships between variables?
+- Are there unusual values (outliers)?
+
+Without EDA, model development becomes largely a trial-and-error process.
+
+---
+
+## Role of EDA in the Machine Learning Pipeline
+
+EDA is performed after Data Validation because it assumes that the dataset has already passed basic quality checks.
+
+The workflow now becomes:
+
+Dataset
+
+↓
+
+Data Ingestion
+
+↓
+
+Data Validation
+
+↓
+
+Exploratory Data Analysis
+
+↓
+
+Data Cleaning
+
+↓
+
+Feature Engineering
+
+↓
+
+Model Training
+
+---
+
+## AutoDS Implementation
+
+The EDA functionality is encapsulated inside a dedicated module.
+
+Each analysis is implemented as an independent method, making the module reusable and easy to maintain.
+
+---
+
+## Key Takeaways
+
+- EDA helps understand the dataset before preprocessing.
+- It reveals useful information about the structure of the data.
+- EDA supports better decision-making throughout the ML pipeline.
+
+---
+
+# Step 5.2 – Statistical Summary
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- What descriptive statistics are.
+- Why statistical summaries are useful.
+- How AutoDS generates dataset statistics.
+
+---
+
+## What is a Statistical Summary?
+
+A statistical summary provides a quick overview of the numerical properties of a dataset.
+
+It includes measurements such as:
+
+- Count
+- Mean
+- Standard Deviation
+- Minimum
+- Maximum
+- Quartiles
+
+These values help understand the overall distribution of each numerical feature.
+
+---
+
+## Why is it Useful?
+
+Statistical summaries help identify:
+
+- Extremely large or small values
+- Wide variation in data
+- Potential outliers
+- Data ranges
+
+Without manually inspecting every record, users can quickly understand the dataset.
+
+---
+
+## AutoDS Implementation
+
+AutoDS automatically generates descriptive statistics for every numerical column.
+
+The summary is later included in the final EDA report.
+
+---
+
+## Key Takeaways
+
+- Statistical summaries provide a high-level overview of numerical data.
+- They help detect unusual patterns early.
+- They are one of the first steps in EDA.
+
+---
+
+# Step 5.3 – Numerical Feature Analysis
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- What numerical features are.
+- Why numerical analysis is important.
+- How AutoDS identifies numerical columns.
+
+---
+
+## What are Numerical Features?
+
+Numerical features contain measurable values.
+
+Examples include:
+
+- Age
+- Salary
+- Temperature
+- Height
+- Weight
+
+These features support mathematical operations and statistical analysis.
+
+---
+
+## Why Analyze Numerical Features?
+
+Numerical features form the foundation of many Machine Learning algorithms.
+
+Understanding them helps determine:
+
+- Distribution
+- Scale
+- Variability
+- Outliers
+
+---
+
+## AutoDS Implementation
+
+AutoDS automatically identifies numerical columns based on their data types.
+
+The information is used during:
+
+- Statistical Summary
+- Correlation Analysis
+- Histogram Generation
+- Outlier Detection
+
+---
+
+## Key Takeaways
+
+- Numerical features represent measurable quantities.
+- Most Machine Learning algorithms primarily operate on numerical data.
+- Proper analysis improves feature understanding.
+
+---
+
+# Step 5.4 – Categorical Feature Analysis
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- What categorical features are.
+- Why categorical analysis is important.
+- How AutoDS identifies categorical columns.
+
+---
+
+## What are Categorical Features?
+
+Categorical features represent labels or categories instead of measurable quantities.
+
+Examples include:
+
+- Gender
+- City
+- Country
+- Product Category
+
+These values describe groups rather than numerical measurements.
+
+---
+
+## Why Analyze Categorical Features?
+
+Categorical analysis helps understand:
+
+- Available categories
+- Number of unique values
+- Feature composition
+
+This information becomes useful during Feature Engineering and Encoding.
+
+---
+
+## AutoDS Implementation
+
+AutoDS automatically detects categorical columns and summarizes their characteristics.
+
+---
+
+## Key Takeaways
+
+- Categorical features represent labels rather than numbers.
+- They require different preprocessing techniques from numerical features.
+- Identifying them early simplifies later processing.
+
+---
+
+# Step 5.5 – Correlation Analysis
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- What correlation is.
+- Why feature relationships matter.
+- How AutoDS computes correlations.
+
+---
+
+## What is Correlation?
+
+Correlation measures the strength of the relationship between two numerical variables.
+
+Correlation values range from:
+
+- -1 → Strong negative relationship
+- 0 → No relationship
+- +1 → Strong positive relationship
+
+---
+
+## Why is Correlation Important?
+
+Correlation helps identify:
+
+- Strong feature relationships
+- Redundant variables
+- Features that move together
+
+This information becomes valuable during Feature Engineering.
+
+---
+
+## AutoDS Implementation
+
+AutoDS computes the correlation matrix for all numerical features.
+
+The matrix is included in the EDA results for further analysis.
+
+---
+
+## Key Takeaways
+
+- Correlation measures relationships between variables.
+- Strong correlations may indicate redundant information.
+- Correlation is useful for feature selection.
+
+---
+
+# Step 5.6 – Histogram Generation
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- What a histogram is.
+- Why histograms are useful.
+- How AutoDS generates visualizations.
+
+---
+
+## What is a Histogram?
+
+A histogram is a graphical representation of the distribution of numerical data.
+
+It groups values into intervals called bins and displays how many observations fall into each interval.
+
+---
+
+## Why Generate Histograms?
+
+Histograms help visualize:
+
+- Distribution
+- Skewness
+- Spread
+- Peaks
+- Possible outliers
+
+Visualizations often reveal patterns that statistics alone cannot.
+
+---
+
+## AutoDS Implementation
+
+AutoDS automatically generates histogram plots for every numerical feature.
+
+The plots are saved inside:
+
+```
+reports/
+└── plots/
+```
+
+This allows users to inspect feature distributions visually.
+
+---
+
+## Key Takeaways
+
+- Histograms visualize numerical distributions.
+- Visual analysis complements statistical analysis.
+- AutoDS automatically generates plots for every numerical feature.
+
+---
+
+# Step 5.7 – Outlier Detection
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- What outliers are.
+- Why outlier detection is important.
+- How AutoDS detects outliers.
+
+---
+
+## What are Outliers?
+
+Outliers are observations that lie significantly farther away from the majority of the data.
+
+Example:
+
+```
+12 14 15 16 17 18 19 150
+```
+
+The value **150** is an outlier.
+
+---
+
+## Why Detect Outliers?
+
+Outliers can:
+
+- Distort statistical summaries.
+- Affect Machine Learning models.
+- Mislead visualizations.
+
+Detecting them early allows informed preprocessing decisions.
+
+---
+
+## IQR Method
+
+AutoDS currently detects outliers using the Interquartile Range (IQR) method.
+
+The process is:
+
+1. Calculate Q1.
+2. Calculate Q3.
+3. Compute IQR = Q3 − Q1.
+4. Determine lower and upper bounds.
+5. Identify observations outside these bounds.
+
+---
+
+## AutoDS Implementation
+
+The EDA module automatically detects outliers for every numerical feature.
+
+The detected counts are included in the EDA report.
+
+---
+
+## Key Takeaways
+
+- Outliers are unusually large or small observations.
+- AutoDS uses the IQR method for detection.
+- Outlier detection supports later preprocessing decisions.
+
+---
+
+# Step 5.8 – Refactoring the EDA Module
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- Why refactoring is important.
+- How the Single Responsibility Principle improves software quality.
+- Why visualization and reporting were separated.
+
+---
+
+## Why Refactor?
+
+Initially, one class handled:
+
+- Statistical analysis
+- Plot generation
+- Report generation
+
+As the project grew, this design became difficult to maintain.
+
+To improve architecture, responsibilities were separated into dedicated classes.
+
+---
+
+## New Architecture
+
+EDAAnalyzer
+
+Responsible for:
+
+- Statistical analysis
+- Correlation analysis
+- Outlier detection
+
+Visualizer
+
+Responsible for:
+
+- Histogram generation
+
+EDAReport
+
+Responsible for:
+
+- Formatting and generating the final EDA report
+
+Each class now has one clearly defined responsibility.
+
+---
+
+## Advantages
+
+- Easier maintenance
+- Better scalability
+- Cleaner code
+- Improved readability
+- Better adherence to software engineering principles
+
+---
+
+## Key Takeaways
+
+- Refactoring improves software without changing functionality.
+- Following the Single Responsibility Principle produces cleaner architecture.
+- Smaller modules are easier to extend and test.
+
+---
+
+# Step 5.9 – EDA Report Generation
+
+### Status
+
+✅ Completed
+
+---
+
+## Learning Objectives
+
+After completing this step, you should understand:
+
+- Why EDA reports are generated.
+- What information the report contains.
+- How AutoDS presents analysis results.
+
+---
+
+## Why Generate an EDA Report?
+
+Instead of displaying scattered console outputs, AutoDS combines all analysis results into a structured report.
+
+This provides users with a complete summary of the dataset in one location.
+
+---
+
+## Report Contents
+
+The EDA report currently includes:
+
+- Dataset Shape
+- Statistical Summary
+- Numerical Features
+- Categorical Features
+- Correlation Matrix
+- Outlier Summary
+
+The report is both displayed in the terminal and saved for future reference.
+
+---
+
+## Report Location
+
+```
+reports/
+
+├── eda_report.txt
+└── plots/
+```
+
+This ensures that analysis results remain available even after the application finishes execution.
+
+---
+
+## Key Takeaways
+
+- Reports organize analysis results into a readable format.
+- Persistent reports improve reproducibility.
+- AutoDS automatically generates an EDA report after analysis.
+
+---
+
+# Files Created During Phase 5
+
+```
+src/
+│
+├── eda/
+│   ├── __init__.py
+│   ├── analyzer.py
+│   ├── report.py
+│   └── visualizer.py
+```
+
+---
+
+# Best Practices Learned
+
+- Perform EDA before preprocessing.
+- Separate analysis, visualization, and reporting.
+- Keep each class focused on one responsibility.
+- Combine statistical and visual analysis.
+- Generate reports automatically.
+- Save visualizations for later inspection.
+
+---
+
+# Key Takeaways
+
+- Exploratory Data Analysis provides a deeper understanding of the dataset before preprocessing.
+- AutoDS now performs automated statistical analysis, visualization, correlation analysis, and outlier detection.
+- The EDA module follows a modular architecture using dedicated analyzer, visualization, and reporting components.
+- The output of this phase becomes the foundation for the Data Cleaning phase.
+
+---

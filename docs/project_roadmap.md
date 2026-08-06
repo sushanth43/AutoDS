@@ -14,10 +14,10 @@ Develop a production-quality autonomous data science platform capable of automat
 
 # Overall Progress
 
-```
+```text
 Overall Completion Progress
 
-██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 20%
+█████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 35%
 ```
 
 > **Note:** This progress bar will be updated after completing each phase.
@@ -32,8 +32,8 @@ Overall Completion Progress
 | Phase 1 | Project Setup & Development Environment | ✅ Completed |
 | Phase 2 | Configuration & Logging | ✅ Completed |
 | Phase 3 | Data Ingestion | ✅ Completed |
-| Phase 4 | Data Validation | ⏳ Pending |
-| Phase 5 | Data Profiling (EDA) | ⏳ Pending |
+| Phase 4 | Data Validation | ✅ Completed |
+| Phase 5 | Exploratory Data Analysis (EDA) | ✅ Completed |
 | Phase 6 | Data Cleaning | ⏳ Pending |
 | Phase 7 | Feature Engineering | ⏳ Pending |
 | Phase 8 | Automatic Machine Learning | ⏳ Pending |
@@ -166,6 +166,64 @@ Overall Completion Progress
 
 ---
 
+# Phase 4 – Data Validation
+
+### Status
+
+✅ Completed
+
+### Objectives
+
+- Understand Data Validation
+- Build the DataValidator class
+- Detect empty datasets
+- Detect missing values
+- Detect duplicate rows
+- Analyze data types
+- Generate validation reports
+
+### Completed
+
+- ✅ Step 4.1 – Introduction to Data Validation
+- ✅ Step 4.2 – Empty Dataset Validation
+- ✅ Step 4.3 – Missing Value Detection
+- ✅ Step 4.4 – Duplicate Row Detection
+- ✅ Step 4.5 – Data Type Analysis
+- ✅ Step 4.6 – Validation Report Generation
+
+---
+
+# Phase 5 – Exploratory Data Analysis (EDA)
+
+### Status
+
+✅ Completed
+
+### Objectives
+
+- Understand Exploratory Data Analysis (EDA)
+- Generate descriptive statistics
+- Analyze numerical features
+- Analyze categorical features
+- Perform correlation analysis
+- Generate histogram visualizations
+- Detect outliers
+- Generate EDA reports
+
+### Completed
+
+- ✅ Step 5.1 – Introduction to Exploratory Data Analysis
+- ✅ Step 5.2 – Statistical Summary
+- ✅ Step 5.3 – Numerical Feature Analysis
+- ✅ Step 5.4 – Categorical Feature Analysis
+- ✅ Step 5.5 – Correlation Analysis
+- ✅ Step 5.6 – Histogram Generation
+- ✅ Step 5.7 – Outlier Detection
+- ✅ Step 5.8 – Refactoring the EDA Module
+- ✅ Step 5.9 – EDA Report Generation
+
+---
+
 # Future Phases
 
 The remaining phases will be expanded as development progresses.
@@ -190,9 +248,15 @@ Each phase will include:
 | Configuration System Implemented | ✅ |
 | Logging System Implemented | ✅ |
 | Data Ingestion Pipeline Implemented | ✅ |
-| Data Validation Engine | ⏳ |
+| Data Validation Engine | ✅ |
+| Exploratory Data Analysis (EDA) Engine | ✅ |
+| Data Cleaning Pipeline | ⏳ |
+| Feature Engineering Pipeline | ⏳ |
 | AutoML Engine | ⏳ |
+| Model Evaluation System | ⏳ |
+| Explainable AI Integration | ⏳ |
 | Dashboard | ⏳ |
+| Report Generation | ⏳ |
 | FastAPI Integration | ⏳ |
 | Version 1 Complete | ⏳ |
 
@@ -205,21 +269,24 @@ Each phase will include:
 | v0.1.0 | Repository Initialization | ✅ |
 | v0.2.0 | Project Foundation (Configuration & Logging) | ✅ |
 | v0.3.0 | Data Ingestion Module | ✅ |
-| v0.4.0 | Data Validation Pipeline | ⏳ |
-| v0.5.0 | Data Processing Pipeline | ⏳ |
-| v0.6.0 | AutoML Engine | ⏳ |
-| v0.7.0 | Dashboard | ⏳ |
-| v0.8.0 | Prediction API | ⏳ |
+| v0.4.0 | Data Validation Pipeline | ✅ |
+| v0.5.0 | Exploratory Data Analysis (EDA) Module | ✅ |
+| v0.6.0 | Data Cleaning Pipeline | ⏳ |
+| v0.7.0 | Feature Engineering Module | ⏳ |
+| v0.8.0 | Automatic Machine Learning | ⏳ |
+| v0.9.0 | Model Evaluation & Explainability | ⏳ |
+| v0.10.0 | Dashboard & Report Generation | ⏳ |
+| v0.11.0 | Prediction API (FastAPI) | ⏳ |
 | v1.0.0 | First Stable Release | ⏳ |
 
 ---
 
 # Current Focus
 
-```
+```text
 Current Phase
 
-Phase 4 – Data Validation
+Phase 6 – Data Cleaning
 
 Status
 

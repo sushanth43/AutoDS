@@ -767,3 +767,784 @@ Keeping it inside `config.py` follows the project's configuration management pri
 ## Future Impact
 
 Future versions may allow users to change dataset paths through configuration files or a graphical interface without modifying the source code.
+
+---
+
+# PHASE 4 – DATA VALIDATION
+
+---
+
+# Engineering Decision 015
+
+## Phase
+
+Phase 4 – Data Validation
+
+## Topic
+
+Separate Data Validation from Data Cleaning
+
+## Decision
+
+Implement Data Validation as a completely independent module before introducing Data Cleaning.
+
+The validation module is responsible only for identifying data quality issues and reporting them.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Perform validation and cleaning together inside a single module.
+
+### Option B ✅ (Selected)
+
+Separate validation and cleaning into two independent phases.
+
+---
+
+## Reason
+
+Validation and cleaning solve different problems.
+
+Validation identifies issues within the dataset, whereas cleaning modifies the dataset to resolve those issues.
+
+Separating these responsibilities follows the Single Responsibility Principle (SRP) and produces a cleaner, more maintainable architecture.
+
+---
+
+## Advantages
+
+- Clear separation of responsibilities
+- Easier debugging
+- Better maintainability
+- Reusable validation module
+- Easier testing
+
+---
+
+## Future Impact
+
+Future validation checks can be added without affecting the Data Cleaning module.
+
+Likewise, new cleaning techniques can be introduced without modifying the validation logic.
+
+---
+
+# Engineering Decision 016
+
+## Phase
+
+Phase 4 – Data Validation
+
+## Topic
+
+Dedicated DataValidator Class
+
+## Decision
+
+Create a dedicated `DataValidator` class responsible for performing all dataset validation operations.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Perform validation directly inside `main.py`.
+
+### Option B
+
+Merge validation logic into the `DataLoader`.
+
+### Option C ✅ (Selected)
+
+Implement a dedicated `DataValidator` class.
+
+---
+
+## Reason
+
+The DataLoader is responsible only for loading datasets.
+
+Adding validation responsibilities would violate the Single Responsibility Principle.
+
+Creating a dedicated validator produces a cleaner and more modular architecture.
+
+---
+
+## Advantages
+
+- Single Responsibility Principle
+- Better modularity
+- Easier maintenance
+- Reusable validation component
+- Improved scalability
+
+---
+
+## Future Impact
+
+Future validation rules such as schema validation, constraint validation, and business rule validation can be implemented inside the `DataValidator` without affecting other modules.
+
+---
+
+# Engineering Decision 017
+
+## Phase
+
+Phase 4 – Data Validation
+
+## Topic
+
+Validation Before Processing
+
+## Decision
+
+Ensure every dataset passes through the validation pipeline before any further analysis or preprocessing.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Begin EDA immediately after loading the dataset.
+
+### Option B ✅ (Selected)
+
+Validate the dataset before allowing it to proceed to the next stage.
+
+---
+
+## Reason
+
+Processing invalid datasets may produce incorrect statistics, misleading visualizations, and unreliable Machine Learning models.
+
+Validating data first guarantees that later modules receive datasets whose quality has already been assessed.
+
+---
+
+## Advantages
+
+- Improved reliability
+- Better data quality
+- Reduced downstream errors
+- Cleaner workflow
+
+---
+
+## Future Impact
+
+Every future module in AutoDS will receive datasets that have already passed the validation stage.
+
+This establishes Data Validation as a permanent quality checkpoint within the pipeline.
+
+---
+
+# Engineering Decision 018
+
+## Phase
+
+Phase 4 – Data Validation
+
+## Topic
+
+Generate Validation Reports Instead of Individual Console Messages
+
+## Decision
+
+Combine all validation results into a structured validation report instead of displaying unrelated console messages.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Print each validation result individually.
+
+### Option B ✅ (Selected)
+
+Generate a single structured validation summary.
+
+---
+
+## Reason
+
+A consolidated report is easier to read, easier to maintain, and provides users with a complete overview of dataset quality.
+
+It also allows validation results to be reused by future reporting modules.
+
+---
+
+## Advantages
+
+- Better readability
+- Professional output
+- Easier debugging
+- Centralized reporting
+- Improved user experience
+
+---
+
+## Future Impact
+
+Future versions of AutoDS can export validation reports as PDF, HTML, or dashboard components without modifying the validation logic.
+
+---
+
+# Engineering Decision 019
+
+## Phase
+
+Phase 4 – Data Validation
+
+## Topic
+
+Non-Destructive Validation
+
+## Decision
+
+Ensure that the validation module never modifies the dataset.
+
+Its responsibility is limited to identifying and reporting data quality issues.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Automatically fix problems during validation.
+
+### Option B ✅ (Selected)
+
+Keep validation completely non-destructive.
+
+---
+
+## Reason
+
+Automatically modifying datasets during validation makes it difficult to distinguish between identifying problems and correcting them.
+
+Keeping validation non-destructive improves transparency and makes debugging easier.
+
+---
+
+## Advantages
+
+- Predictable behaviour
+- Easier debugging
+- Clear separation of responsibilities
+- Better software design
+- Improved maintainability
+
+---
+
+## Future Impact
+
+Future cleaning strategies can evolve independently while the validation module remains stable and reusable.
+
+---
+
+# Engineering Decision 020
+
+## Phase
+
+Phase 4 – Data Validation
+
+## Topic
+
+Modular Validation Checks
+
+## Decision
+
+Implement each validation check as an independent method inside the `DataValidator` class.
+
+Examples include:
+
+- Empty Dataset Validation
+- Missing Value Detection
+- Duplicate Detection
+- Data Type Analysis
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Write one large validation function.
+
+### Option B ✅ (Selected)
+
+Create separate methods for every validation task.
+
+---
+
+## Reason
+
+Smaller methods are easier to understand, maintain, debug, and test.
+
+They also allow new validation rules to be added without modifying existing functionality.
+
+---
+
+## Advantages
+
+- Cleaner architecture
+- Better readability
+- Easier testing
+- Improved maintainability
+- Better extensibility
+
+---
+
+## Future Impact
+
+Future validation methods such as:
+
+- Range Validation
+- Schema Validation
+- Date Validation
+- Constraint Validation
+
+can be added as independent methods without changing the existing implementation.
+
+---
+
+---
+
+# PHASE 5 – EXPLORATORY DATA ANALYSIS (EDA)
+
+---
+
+# Engineering Decision 021
+
+## Phase
+
+Phase 5 – Exploratory Data Analysis (EDA)
+
+## Topic
+
+Separate Exploratory Data Analysis from Data Validation
+
+## Decision
+
+Implement Exploratory Data Analysis (EDA) as an independent phase that executes only after Data Validation has been completed successfully.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Merge Data Validation and EDA into a single module.
+
+### Option B ✅ (Selected)
+
+Keep Data Validation and Exploratory Data Analysis as separate phases.
+
+---
+
+## Reason
+
+Validation focuses on verifying dataset quality, whereas EDA focuses on understanding the dataset.
+
+Separating these responsibilities keeps the architecture modular and follows the Single Responsibility Principle.
+
+---
+
+## Advantages
+
+- Clear separation of concerns
+- Easier maintenance
+- Better scalability
+- Improved readability
+- Cleaner project architecture
+
+---
+
+## Future Impact
+
+Future EDA techniques can be added without affecting the validation module.
+
+---
+
+# Engineering Decision 022
+
+## Phase
+
+Phase 5 – Exploratory Data Analysis (EDA)
+
+## Topic
+
+Dedicated EDAAnalyzer Class
+
+## Decision
+
+Create a dedicated `EDAAnalyzer` class responsible for performing all exploratory data analysis operations.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Perform EDA directly inside `main.py`.
+
+### Option B
+
+Add EDA functionality inside the `DataValidator`.
+
+### Option C ✅ (Selected)
+
+Create a dedicated `EDAAnalyzer` class.
+
+---
+
+## Reason
+
+EDA involves multiple independent analyses such as descriptive statistics, correlation analysis, categorical analysis, and outlier detection.
+
+Keeping these operations inside a dedicated class improves modularity and keeps other components focused on their own responsibilities.
+
+---
+
+## Advantages
+
+- Modular design
+- Easier maintenance
+- Reusable analysis component
+- Better testing
+- Improved scalability
+
+---
+
+## Future Impact
+
+Future EDA techniques can be implemented without modifying the rest of the pipeline.
+
+---
+
+# Engineering Decision 023
+
+## Phase
+
+Phase 5 – Exploratory Data Analysis (EDA)
+
+## Topic
+
+Separate Visualization from Analysis
+
+## Decision
+
+Move all visualization logic into a dedicated `Visualizer` class.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Generate plots directly inside the EDA analysis methods.
+
+### Option B ✅ (Selected)
+
+Separate visualization into its own module.
+
+---
+
+## Reason
+
+Creating visualizations and performing statistical analysis are two different responsibilities.
+
+Separating them follows the Single Responsibility Principle and keeps both components simpler.
+
+---
+
+## Advantages
+
+- Cleaner architecture
+- Easier maintenance
+- Better code organization
+- Independent visualization module
+- Easier future expansion
+
+---
+
+## Future Impact
+
+Additional visualizations such as box plots, scatter plots, heatmaps, and pair plots can be added without changing the analysis logic.
+
+---
+
+# Engineering Decision 024
+
+## Phase
+
+Phase 5 – Exploratory Data Analysis (EDA)
+
+## Topic
+
+Dedicated EDA Report Generator
+
+## Decision
+
+Create a dedicated `EDAReport` class responsible for formatting and generating the final EDA report.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Print analysis results directly from the analyzer.
+
+### Option B ✅ (Selected)
+
+Generate a structured report using a dedicated reporting module.
+
+---
+
+## Reason
+
+Separating reporting from analysis keeps the EDAAnalyzer focused solely on computing results.
+
+It also allows reports to be generated in multiple formats without modifying the analysis code.
+
+---
+
+## Advantages
+
+- Better separation of responsibilities
+- Cleaner implementation
+- Easier report customization
+- Improved maintainability
+
+---
+
+## Future Impact
+
+Future versions can export reports as PDF, HTML, or dashboard widgets using the same reporting component.
+
+---
+
+# Engineering Decision 025
+
+## Phase
+
+Phase 5 – Exploratory Data Analysis (EDA)
+
+## Topic
+
+Automatic Histogram Generation
+
+## Decision
+
+Automatically generate histogram plots for every numerical feature during EDA.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Require users to manually generate plots.
+
+### Option B ✅ (Selected)
+
+Automatically generate histogram visualizations.
+
+---
+
+## Reason
+
+Histograms provide immediate insight into feature distributions and help identify skewness, multimodal distributions, and potential outliers.
+
+Automating this process improves usability and saves users from repetitive tasks.
+
+---
+
+## Advantages
+
+- Better data understanding
+- Improved user experience
+- Consistent analysis
+- Reduced manual effort
+
+---
+
+## Future Impact
+
+Additional automatic visualizations can be generated using the same visualization framework.
+
+---
+
+# Engineering Decision 026
+
+## Phase
+
+Phase 5 – Exploratory Data Analysis (EDA)
+
+## Topic
+
+Use the IQR Method for Outlier Detection
+
+## Decision
+
+Adopt the Interquartile Range (IQR) method as the default approach for detecting outliers.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Z-Score Method
+
+### Option B
+
+Isolation Forest
+
+### Option C ✅ (Selected)
+
+Interquartile Range (IQR)
+
+---
+
+## Reason
+
+The IQR method is simple, interpretable, computationally efficient, and performs well for many tabular datasets.
+
+It also does not assume that the data follows a normal distribution.
+
+---
+
+## Advantages
+
+- Easy to understand
+- Fast computation
+- Robust for many datasets
+- Widely accepted statistical technique
+
+---
+
+## Future Impact
+
+Future versions may support multiple outlier detection techniques while retaining IQR as the default implementation.
+
+---
+
+# Engineering Decision 027
+
+## Phase
+
+Phase 5 – Exploratory Data Analysis (EDA)
+
+## Topic
+
+Generate Persistent EDA Reports
+
+## Decision
+
+Save the EDA report to disk in addition to displaying it in the terminal.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Display results only in the console.
+
+### Option B ✅ (Selected)
+
+Generate a persistent report file.
+
+---
+
+## Reason
+
+Console output disappears after the application terminates.
+
+Saving reports allows users to review results later and provides a permanent record of the analysis.
+
+---
+
+## Advantages
+
+- Persistent analysis results
+- Better reproducibility
+- Improved user experience
+- Easier documentation
+
+---
+
+## Future Impact
+
+The reporting system can later support PDF, HTML, Markdown, and dashboard-based report generation without changing the analysis workflow.
+
+---
+
+# Engineering Decision 028
+
+## Phase
+
+Phase 5 – Exploratory Data Analysis (EDA)
+
+## Topic
+
+Refactor the EDA Module Using the Single Responsibility Principle
+
+## Decision
+
+Refactor the original EDA implementation into three independent components:
+
+- `EDAAnalyzer`
+- `Visualizer`
+- `EDAReport`
+
+Each component performs one well-defined responsibility.
+
+---
+
+## Alternatives Considered
+
+### Option A
+
+Maintain one large EDA class containing analysis, visualization, and reporting.
+
+### Option B ✅ (Selected)
+
+Split the functionality into dedicated classes.
+
+---
+
+## Reason
+
+As the EDA module expanded, combining multiple responsibilities into a single class made the code harder to understand and maintain.
+
+Applying the Single Responsibility Principle resulted in a cleaner and more extensible architecture.
+
+---
+
+## Advantages
+
+- Better modularity
+- Improved maintainability
+- Easier testing
+- Better readability
+- Simpler future extensions
+
+---
+
+## Future Impact
+
+Future EDA features can be implemented by extending the appropriate component without affecting the others.
+
+This architecture provides a scalable foundation for future versions of AutoDS.
+
+---

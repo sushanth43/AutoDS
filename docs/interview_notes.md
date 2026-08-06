@@ -789,3 +789,886 @@ A common interview discussion is:
 A strong answer is:
 
 > "Because the DataLoader encapsulates validation, logging, configuration, and error handling, keeping the rest of the application independent of file-loading details."
+
+---
+
+# Phase 4 – Data Validation
+
+# Step 4.1 – Introduction to Data Validation
+
+---
+
+## Question 1
+
+**What is Data Validation?**
+
+### Answer
+
+Data Validation is the process of checking whether a dataset satisfies predefined quality rules before it is processed further.
+
+Its primary purpose is to identify problems in the dataset without modifying the data.
+
+---
+
+## Question 2
+
+**Why is Data Validation important in Machine Learning?**
+
+### Answer
+
+Machine Learning models are highly dependent on data quality.
+
+Validating data before processing helps identify issues such as missing values, duplicate records, incorrect data types, and empty datasets, reducing the chances of errors and improving model reliability.
+
+---
+
+## Question 3
+
+**What is the difference between Data Validation and Data Cleaning?**
+
+### Answer
+
+Data Validation identifies problems within the dataset.
+
+Examples include:
+
+- Missing values
+- Duplicate rows
+- Incorrect data types
+
+Data Cleaning corrects those problems by modifying the dataset.
+
+Examples include:
+
+- Filling missing values
+- Removing duplicates
+- Converting data types
+
+---
+
+## Question 4
+
+**When should Data Validation be performed?**
+
+### Answer
+
+Data Validation should be performed immediately after data ingestion and before Exploratory Data Analysis or Data Cleaning.
+
+This ensures that every downstream module works with a dataset whose quality has already been assessed.
+
+---
+
+## Interview Tip
+
+Interviewers often ask:
+
+> "Why not clean the data immediately instead of validating it first?"
+
+A strong answer is:
+
+> "Validation identifies data quality issues, while cleaning resolves them. Separating these responsibilities makes the application easier to maintain, debug, and extend."
+
+---
+
+# Step 4.2 – Empty Dataset Validation
+
+---
+
+## Question 1
+
+**Why should an application check whether a dataset is empty?**
+
+### Answer
+
+An empty dataset contains no observations and therefore cannot be analyzed or used for Machine Learning.
+
+Detecting this condition early prevents unnecessary computation and avoids errors in later stages of the pipeline.
+
+---
+
+## Question 2
+
+**Why is the empty dataset check performed first?**
+
+### Answer
+
+Checking whether a dataset is empty is computationally inexpensive.
+
+If the dataset contains no records, there is no need to perform more expensive validation operations such as duplicate detection or data type analysis.
+
+---
+
+## Interview Tip
+
+Always mention that inexpensive validation checks should be performed before more computationally expensive operations.
+
+---
+
+# Step 4.3 – Missing Value Detection
+
+---
+
+## Question 1
+
+**What are missing values?**
+
+### Answer
+
+Missing values represent unavailable or unknown information within a dataset.
+
+In Pandas, they are commonly represented as `NaN` or `None`.
+
+---
+
+## Question 2
+
+**Why are missing values problematic?**
+
+### Answer
+
+Missing values can:
+
+- Distort statistical calculations.
+- Reduce model accuracy.
+- Cause some Machine Learning algorithms to fail.
+- Produce misleading analytical results.
+
+---
+
+## Question 3
+
+**How does AutoDS handle missing values during validation?**
+
+### Answer
+
+During validation, AutoDS only detects and reports missing values.
+
+The dataset remains unchanged.
+
+The actual handling of missing values is performed later during the Data Cleaning phase.
+
+---
+
+## Interview Tip
+
+Interviewers may ask:
+
+> "Would you remove every row containing missing values?"
+
+A good answer is:
+
+> "Not necessarily. The appropriate strategy depends on the amount of missing data, feature importance, and the specific Machine Learning problem."
+
+---
+
+# Step 4.4 – Duplicate Row Detection
+
+---
+
+## Question 1
+
+**What are duplicate rows?**
+
+### Answer
+
+Duplicate rows are records that appear more than once in a dataset without providing any additional information.
+
+---
+
+## Question 2
+
+**Why are duplicate rows harmful?**
+
+### Answer
+
+Duplicate records can:
+
+- Bias Machine Learning models.
+- Distort statistical analysis.
+- Increase dataset size unnecessarily.
+- Produce misleading insights.
+
+---
+
+## Question 3
+
+**Does AutoDS remove duplicates during validation?**
+
+### Answer
+
+No.
+
+The validation module only detects and reports duplicate records.
+
+Duplicate removal is performed later during the Data Cleaning phase.
+
+---
+
+## Interview Tip
+
+A common interview question is:
+
+> "Why not remove duplicates immediately?"
+
+A good answer is:
+
+> "Validation should only identify issues. Cleaning is responsible for modifying the dataset."
+
+---
+
+# Step 4.5 – Data Type Analysis
+
+---
+
+## Question 1
+
+**Why is data type analysis important?**
+
+### Answer
+
+Different data types require different preprocessing techniques.
+
+Understanding feature types helps determine how each column should be handled during Feature Engineering and Machine Learning.
+
+---
+
+## Question 2
+
+**What are the most common Pandas data types?**
+
+### Answer
+
+Common data types include:
+
+- int64
+- float64
+- object
+- bool
+- datetime64
+
+---
+
+## Question 3
+
+**Why is storing numerical data as text a problem?**
+
+### Answer
+
+Machine Learning algorithms expect numerical features to have numerical data types.
+
+If numerical values are stored as text, they cannot be processed correctly until they are converted.
+
+---
+
+## Interview Tip
+
+Interviewers often ask:
+
+> "Why should data types be checked before Feature Engineering?"
+
+The expected answer is:
+
+> "Feature Engineering depends on correctly identifying numerical, categorical, and datetime features. Incorrect data types can lead to improper preprocessing."
+
+---
+
+# Step 4.6 – Validation Report Generation
+
+---
+
+## Question 1
+
+**Why generate a Validation Report?**
+
+### Answer
+
+A Validation Report provides a centralized summary of dataset quality instead of displaying scattered console messages.
+
+It allows users to quickly understand the condition of the dataset before preprocessing begins.
+
+---
+
+## Question 2
+
+**What information does the Validation Report contain?**
+
+### Answer
+
+The Validation Report currently includes:
+
+- Dataset Shape
+- Empty Dataset Check
+- Missing Value Summary
+- Duplicate Row Count
+- Column Data Types
+
+---
+
+## Question 3
+
+**What are the advantages of generating structured reports?**
+
+### Answer
+
+Structured reports provide:
+
+- Better readability
+- Easier debugging
+- Improved maintainability
+- Better user experience
+- Reusable outputs for future reporting systems
+
+---
+
+## Interview Tip
+
+If asked why reports are important, mention that professional applications present information in a structured format rather than relying on scattered terminal output.
+
+---
+
+# Common Interview Questions (Quick Revision)
+
+- What is Data Validation?
+- Why is Data Validation important?
+- Difference between Validation and Data Cleaning?
+- Why validate data before EDA?
+- What are missing values?
+- Why are duplicate rows harmful?
+- What are common Pandas data types?
+- Why analyze data types?
+- Why generate a Validation Report?
+- Why should validation be non-destructive?
+
+---
+
+---
+
+# Phase 5 – Exploratory Data Analysis (EDA)
+
+# Step 5.1 – Introduction to Exploratory Data Analysis (EDA)
+
+---
+
+## Question 1
+
+**What is Exploratory Data Analysis (EDA)?**
+
+### Answer
+
+Exploratory Data Analysis (EDA) is the process of examining and understanding a dataset before preprocessing or model training.
+
+It uses statistical summaries and visualizations to identify patterns, relationships, anomalies, and important characteristics within the data.
+
+---
+
+## Question 2
+
+**Why is EDA important in Machine Learning?**
+
+### Answer
+
+EDA helps data scientists understand the dataset before building models.
+
+It helps identify:
+
+- Data distribution
+- Feature relationships
+- Outliers
+- Data imbalance
+- Potential preprocessing requirements
+
+A good understanding of the dataset leads to better feature engineering and model selection.
+
+---
+
+## Question 3
+
+**When is EDA performed in the Machine Learning pipeline?**
+
+### Answer
+
+EDA is performed after Data Validation and before Data Cleaning or Feature Engineering.
+
+This ensures that the dataset has already passed basic quality checks before analysis begins.
+
+---
+
+## Question 4
+
+**Why shouldn't we train a model immediately after loading the data?**
+
+### Answer
+
+Without understanding the dataset, important issues such as skewed distributions, outliers, redundant features, or unusual relationships may go unnoticed.
+
+EDA provides valuable insights that improve later stages of the Machine Learning pipeline.
+
+---
+
+## Interview Tip
+
+A common interview question is:
+
+> "Why do Data Scientists spend so much time performing EDA?"
+
+A strong answer is:
+
+> "Because understanding the data is often more important than choosing the Machine Learning algorithm. Good EDA leads to better preprocessing, feature engineering, and model performance."
+
+---
+
+# Step 5.2 – Statistical Summary
+
+---
+
+## Question 1
+
+**What is a statistical summary?**
+
+### Answer
+
+A statistical summary provides descriptive statistics for numerical features.
+
+It commonly includes:
+
+- Count
+- Mean
+- Standard Deviation
+- Minimum
+- Maximum
+- Quartiles
+
+These statistics provide a quick overview of the dataset.
+
+---
+
+## Question 2
+
+**Why are descriptive statistics useful?**
+
+### Answer
+
+Descriptive statistics help identify:
+
+- Data distribution
+- Large variations
+- Possible outliers
+- Overall characteristics of numerical features
+
+They provide an efficient way to understand large datasets.
+
+---
+
+## Interview Tip
+
+Interviewers often ask:
+
+> "What information can you obtain from `describe()`?"
+
+Mention statistics such as mean, standard deviation, minimum, maximum, and quartiles.
+
+---
+
+# Step 5.3 – Numerical Feature Analysis
+
+---
+
+## Question 1
+
+**What are numerical features?**
+
+### Answer
+
+Numerical features represent measurable quantities and support mathematical operations.
+
+Examples include:
+
+- Age
+- Salary
+- Height
+- Temperature
+
+---
+
+## Question 2
+
+**Why are numerical features important?**
+
+### Answer
+
+Most Machine Learning algorithms require numerical input.
+
+Analyzing numerical features helps understand:
+
+- Distribution
+- Range
+- Variability
+- Potential outliers
+
+---
+
+## Interview Tip
+
+Always mention that numerical features are the primary input for many Machine Learning algorithms.
+
+---
+
+# Step 5.4 – Categorical Feature Analysis
+
+---
+
+## Question 1
+
+**What are categorical features?**
+
+### Answer
+
+Categorical features represent labels or groups rather than numerical values.
+
+Examples include:
+
+- Gender
+- Country
+- Department
+- Product Category
+
+---
+
+## Question 2
+
+**Why analyze categorical features?**
+
+### Answer
+
+Categorical analysis helps understand:
+
+- Number of categories
+- Feature composition
+- Cardinality
+- Data distribution across categories
+
+This information becomes useful during Feature Engineering and Encoding.
+
+---
+
+## Interview Tip
+
+A common interview question is:
+
+> "Can Machine Learning algorithms directly use categorical features?"
+
+A good answer is:
+
+> "Most Machine Learning algorithms require categorical variables to be converted into numerical representations using encoding techniques."
+
+---
+
+# Step 5.5 – Correlation Analysis
+
+---
+
+## Question 1
+
+**What is correlation?**
+
+### Answer
+
+Correlation measures the strength and direction of the relationship between two numerical variables.
+
+Its value ranges from:
+
+- -1 (Strong Negative Correlation)
+- 0 (No Correlation)
+- +1 (Strong Positive Correlation)
+
+---
+
+## Question 2
+
+**Why is correlation analysis useful?**
+
+### Answer
+
+Correlation analysis helps identify:
+
+- Strong feature relationships
+- Redundant variables
+- Highly related features
+- Potential multicollinearity
+
+This information assists in feature selection.
+
+---
+
+## Question 3
+
+**Does correlation imply causation?**
+
+### Answer
+
+No.
+
+Correlation indicates that two variables move together.
+
+It does not prove that one variable causes changes in the other.
+
+---
+
+## Interview Tip
+
+This is one of the most common interview questions.
+
+Always remember:
+
+> **Correlation does not imply causation.**
+
+---
+
+# Step 5.6 – Histogram Generation
+
+---
+
+## Question 1
+
+**What is a histogram?**
+
+### Answer
+
+A histogram is a graphical representation of the distribution of numerical data.
+
+It groups values into intervals called bins and displays the number of observations within each interval.
+
+---
+
+## Question 2
+
+**Why are histograms useful?**
+
+### Answer
+
+Histograms help visualize:
+
+- Distribution
+- Skewness
+- Spread
+- Peaks
+- Potential outliers
+
+Visualizations often reveal patterns that numerical summaries cannot.
+
+---
+
+## Question 3
+
+**Why did AutoDS automatically generate histograms?**
+
+### Answer
+
+Automatically generating histograms saves users from manually creating visualizations and ensures every numerical feature is analyzed consistently.
+
+---
+
+## Interview Tip
+
+If asked why visualization is important, explain that humans often recognize patterns much more easily through graphs than through numerical tables.
+
+---
+
+# Step 5.7 – Outlier Detection
+
+---
+
+## Question 1
+
+**What is an outlier?**
+
+### Answer
+
+An outlier is an observation that lies significantly farther away from the majority of the data.
+
+Outliers may represent genuine rare events or data quality issues.
+
+---
+
+## Question 2
+
+**Why are outliers important?**
+
+### Answer
+
+Outliers can:
+
+- Distort statistical summaries.
+- Influence Machine Learning models.
+- Affect visualizations.
+- Produce misleading analysis.
+
+---
+
+## Question 3
+
+**Which method does AutoDS use for outlier detection?**
+
+### Answer
+
+AutoDS currently uses the **Interquartile Range (IQR)** method.
+
+The IQR method calculates lower and upper bounds based on the first and third quartiles and identifies observations outside these limits as outliers.
+
+---
+
+## Question 4
+
+**Why was the IQR method selected?**
+
+### Answer
+
+The IQR method is:
+
+- Simple
+- Easy to interpret
+- Computationally efficient
+- Suitable for many tabular datasets
+- Independent of normal distribution assumptions
+
+---
+
+## Interview Tip
+
+Interviewers frequently ask:
+
+> "Which outlier detection methods do you know?"
+
+Mention:
+
+- IQR
+- Z-Score
+- Isolation Forest
+- DBSCAN
+
+Then explain why IQR was selected for AutoDS.
+
+---
+
+# Step 5.8 – Refactoring the EDA Module
+
+---
+
+## Question 1
+
+**Why was the EDA module refactored?**
+
+### Answer
+
+Initially, one class handled analysis, visualization, and reporting.
+
+As the module grew, this violated the Single Responsibility Principle.
+
+The implementation was refactored into dedicated components with clearly defined responsibilities.
+
+---
+
+## Question 2
+
+**What components were created?**
+
+### Answer
+
+The EDA module was divided into:
+
+- `EDAAnalyzer`
+- `Visualizer`
+- `EDAReport`
+
+Each class performs one well-defined responsibility.
+
+---
+
+## Question 3
+
+**What software engineering principle motivated this refactoring?**
+
+### Answer
+
+The refactoring was based on the **Single Responsibility Principle (SRP)**.
+
+Each class should have one reason to change.
+
+---
+
+## Interview Tip
+
+Interviewers appreciate candidates who recognize when refactoring is necessary to improve maintainability rather than simply adding more code.
+
+---
+
+# Step 5.9 – EDA Report Generation
+
+---
+
+## Question 1
+
+**Why generate an EDA Report?**
+
+### Answer
+
+An EDA Report combines all analysis results into a structured and readable summary.
+
+Instead of displaying scattered outputs, users receive a centralized overview of the dataset.
+
+---
+
+## Question 2
+
+**What information does the EDA Report contain?**
+
+### Answer
+
+The report currently includes:
+
+- Dataset Shape
+- Statistical Summary
+- Numerical Features
+- Categorical Features
+- Correlation Matrix
+- Outlier Summary
+
+---
+
+## Question 3
+
+**Why save the report instead of only displaying it?**
+
+### Answer
+
+Saving the report allows users to review analysis results later and provides a permanent record of the exploratory analysis.
+
+It also supports future reporting features such as PDF and HTML export.
+
+---
+
+## Interview Tip
+
+Professional software should generate reusable reports rather than relying only on console output.
+
+---
+
+# Common Interview Questions (Quick Revision)
+
+- What is Exploratory Data Analysis (EDA)?
+- Why is EDA important?
+- What information does a statistical summary provide?
+- What are numerical features?
+- What are categorical features?
+- What is correlation?
+- Does correlation imply causation?
+- What is a histogram?
+- Why are histograms useful?
+- What is an outlier?
+- Which outlier detection methods do you know?
+- Why did you choose the IQR method?
+- Why separate visualization from analysis?
+- What is the Single Responsibility Principle?
+- Why generate an EDA Report?
+
+---

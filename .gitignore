@@ -35,3 +35,7 @@ models/
 
 # Testing
 test_prediction.py
+
+# Logs
+logs/
+*.log
